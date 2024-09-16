@@ -9,12 +9,16 @@ TOP-LEVELS STATEMENTS
 UNIVERSALS STATEMENTS
     Variables, Control structures, and rules @error, @warm and @debug.
     CSS Declarations:
-        Style rules, At rules and Mixins
+        Style rules, 
+        At rules: @use, @import, @function, @forward, @extend, @at-root
+        and Mixins
 */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #FFEFF7;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 header {

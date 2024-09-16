@@ -9,7 +9,9 @@ TOP-LEVELS STATEMENTS
 UNIVERSALS STATEMENTS
     Variables, Control structures, and rules @error, @warm and @debug.
     CSS Declarations:
-        Style rules, At rules and Mixins
+        Style rules, 
+        At rules: @use, @import, @function, @forward, @extend, @at-root
+        and Mixins
 */
 $prim-color: #FFEFF7;
 $second-color: #FFDAC6;
@@ -22,6 +24,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: $prim-color;
+    font-family: $font-stack;
 }
 header{
     width: 100%;
