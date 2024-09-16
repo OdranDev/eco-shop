@@ -1,0 +1,34 @@
+/*
+TOP-LEVELS STATEMENTS
+    .Imports
+    .Mixins definate
+    .Functions definate
+    .Modules
+*/
+/* 
+UNIVERSALS STATEMENTS
+    Variables, Control structures, and rules @error, @warm and @debug.
+    CSS Declarations:
+        Style rules, At rules and Mixins
+*/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+footer {
+  background: #FA9500;
+  width: 100%;
+  height: 100px;
+}/*# sourceMappingURL=style.css.map */
