@@ -19,6 +19,7 @@ body {
   box-sizing: border-box;
   background: #FFEFF7;
   font-family: "IBM Plex Sans", sans-serif;
+  color: #BABD8D;
 }
 
 header {
@@ -26,12 +27,17 @@ header {
   max-height: 100px;
 }
 header nav {
+  width: 90%;
+  margin-inline: auto;
+  padding: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
 }
 header nav p {
-  padding-inline: 1rem;
+  margin: 0;
+  color: #7C6A0A;
   font-size: 2rem;
 }
 header nav .icons {
@@ -44,7 +50,39 @@ header nav .icons button {
 
 main {
   width: 100%;
-  height: 100vh;
+  height: auto;
+}
+main article {
+  width: 90%;
+  margin-inline: auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+}
+main article .impact-section {
+  color: #7C6A0A;
+}
+main article .impact-section h1 {
+  font-size: 3rem;
+  color: #7C6A0A;
+}
+main article .impact-section p {
+  font-size: 1.5rem;
+}
+main article .impact-section button {
+  margin-top: 5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 24px;
+  display: block;
+  background-color: #FA9500;
+  color: #FFEFF7;
+  font-weight: bold;
+}
+main article .image-section img {
+  width: 100%;
+  height: 90vh;
+  border-radius: 8px;
 }
 
 footer {
