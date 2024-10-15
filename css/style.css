@@ -31,9 +31,9 @@ header nav {
   margin-inline: auto;
   padding: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-  align-content: center;
+  flex-wrap: wrap;
 }
 header nav p {
   margin: 0;
@@ -85,19 +85,19 @@ main article .image-section img {
   border-radius: 8px;
 }
 
-.product-section .healthcare {
+.product-section .healthcare, .product-section .furniture {
   color: #7C6A0A;
 }
-.product-section .healthcare h2 {
+.product-section .healthcare h2, .product-section .furniture h2 {
   font-size: 2rem;
 }
-.product-section .healthcare .cards__Container {
+.product-section .healthcare .cards__Container, .product-section .furniture .cards__Container {
   margin: 1rem;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-.product-section .healthcare .cards__Container .card {
+.product-section .healthcare .cards__Container .card, .product-section .furniture .cards__Container .card {
   width: 250px;
   height: auto;
   margin: 1rem;
@@ -105,25 +105,39 @@ main article .image-section img {
   background-color: #FFDAC6;
   border-radius: 8px;
 }
-.product-section .healthcare .cards__Container .card .icon-wish {
+.product-section .healthcare .cards__Container .card .icon-wish, .product-section .furniture .cards__Container .card .icon-wish {
   display: grid;
 }
-.product-section .healthcare .cards__Container .card .icon-wish svg {
+.product-section .healthcare .cards__Container .card .icon-wish svg, .product-section .furniture .cards__Container .card .icon-wish svg {
   place-self: end;
+  margin-bottom: 8px;
 }
-.product-section .healthcare .cards__Container .card .icon-wish svg path {
+.product-section .healthcare .cards__Container .card .icon-wish svg path, .product-section .furniture .cards__Container .card .icon-wish svg path {
   stroke: #7C6A0A;
 }
-.product-section .healthcare .cards__Container .card picture {
+.product-section .healthcare .cards__Container .card picture, .product-section .furniture .cards__Container .card picture {
   width: 100%;
   height: 100%;
 }
-.product-section .healthcare .cards__Container .card picture img {
+.product-section .healthcare .cards__Container .card picture img, .product-section .furniture .cards__Container .card picture img {
   width: 100%;
   height: 70%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
+}
+.product-section .furniture .cards__Container .card {
+  background-color: #BABD8D;
+  color: #7C6A0A;
+}
+.product-section .furniture .cards__Container .card .icon-wish svg path {
+  stroke: #FFDAC6;
+}
+.product-section .furniture .cards__Container .card picture img {
+  filter: opacity(0.75);
+}
+.product-section .furniture .cards__Container .card picture img:hover {
+  filter: opacity(1);
 }
 
 footer {
