@@ -21,6 +21,26 @@ $Other-color: #FA9500;
 $Other-color-two: #7C6A0A;
 $font-stack: "IBM Plex Sans", sans-serif;
 
+@mixin flexStyles($displayS, $justifyC, $alignC){
+    display: $displayS;
+    justify-content: $justifyC;
+    align-content: $alignC;
+}
+
+@mixin gridStyle($displayS, $justifyC, $gridTemplateColumns){
+    display: $displayS;
+    justify-content: $justifyC;
+    grid-template-columns: $gridTemplateColumns;
+}
+
+@mixin buttons{
+    button{
+        background: none;
+        border-style: none;
+        border: none;
+    }
+};
+
 body {
     margin: 0;
     padding: 0;
@@ -36,9 +56,7 @@ header{
         width: 90%;
         margin-inline: auto;
         padding: 1rem;
-        display: flex;
-        flex-direction: row;
-        justify-content:space-between;
+        @include flexStyles(flex, space-between, center);
         flex-wrap: wrap;
         p{
             margin: 0;
@@ -47,10 +65,7 @@ header{
         }
         .icons{
             align-self: center;
-            button{
-                border: none;
-                background: none;
-            }
+            @include buttons;
         }
     }
 }
@@ -60,9 +75,8 @@ main{
     article {
         width: 90%;
         margin-inline: auto;
-        display: grid;
+        @include gridStyle(grid, null, repeat(2, minmax(300px, 1fr)));
         gap: 2rem;
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
         .impact-section{
             color: $Other-color-two;
             h1{
@@ -72,10 +86,10 @@ main{
             p{
                 font-size: 1.5rem;
             }
+            @include buttons;
             button{
                 margin-top: 5rem;
                 padding: 1rem 2rem;
-                border: none;
                 border-radius: 24px;
                 display: block;
                 background-color: #FA9500;
@@ -100,9 +114,8 @@ main{
         }
         .cards__Container{
             margin: 1rem;
-            display: grid;
+            @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
             justify-items: center;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             .card{
                 width: 250px;
                 height: auto;
@@ -136,7 +149,7 @@ main{
     .furniture{
         @extend .healthcare;
         .cards__Container{
-            
+
             .card{
                 background-color: $third-color;
                 color: $Other-color-two;
@@ -181,11 +194,12 @@ footer{
         article {
             gap: 1rem;
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, minmax(300px, autp));
+            grid-template-rows: repeat(2, minmax(300px, auto-fit));
             .impact-section{
                 button{
                     margin: 3rem;
                     margin-inline: auto;
+                    @include buttons;
                 }
             }
             .image-section{

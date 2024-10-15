@@ -31,8 +31,8 @@ header nav {
   margin-inline: auto;
   padding: 1rem;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-content: center;
   flex-wrap: wrap;
 }
 header nav p {
@@ -44,8 +44,9 @@ header nav .icons {
   align-self: center;
 }
 header nav .icons button {
-  border: none;
   background: none;
+  border-style: none;
+  border: none;
 }
 
 main {
@@ -56,8 +57,8 @@ main article {
   width: 90%;
   margin-inline: auto;
   display: grid;
-  gap: 2rem;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 2rem;
 }
 main article .impact-section {
   color: #7C6A0A;
@@ -70,9 +71,13 @@ main article .impact-section p {
   font-size: 1.5rem;
 }
 main article .impact-section button {
+  background: none;
+  border-style: none;
+  border: none;
+}
+main article .impact-section button {
   margin-top: 5rem;
   padding: 1rem 2rem;
-  border: none;
   border-radius: 24px;
   display: block;
   background-color: #FA9500;
@@ -94,8 +99,9 @@ main article .image-section img {
 .product-section .healthcare .cards__Container, .product-section .furniture .cards__Container {
   margin: 1rem;
   display: grid;
-  justify-items: center;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
 }
 .product-section .healthcare .cards__Container .card, .product-section .furniture .cards__Container .card {
   width: 250px;
@@ -157,11 +163,16 @@ footer {
   main article {
     gap: 1rem;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, minmax(300px, autp));
+    grid-template-rows: repeat(2, minmax(300px, auto-fit));
   }
   main article .impact-section button {
     margin: 3rem;
     margin-inline: auto;
+  }
+  main article .impact-section button button {
+    background: none;
+    border-style: none;
+    border: none;
   }
   main article .image-section img {
     height: auto;
