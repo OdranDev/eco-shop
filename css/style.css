@@ -13,6 +13,10 @@ UNIVERSALS STATEMENTS
         At rules: @use, @import, @function, @forward, @extend, @at-root
         and Mixins
 */
+h2 {
+  margin-left: 1rem;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -32,7 +36,7 @@ header nav {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 header nav p {
@@ -116,7 +120,7 @@ main article .image-section img {
 }
 .product-section .healthcare .cards__Container .card .icon-wish svg, .product-section .furniture .cards__Container .card .icon-wish svg {
   place-self: end;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .product-section .healthcare .cards__Container .card .icon-wish svg path, .product-section .furniture .cards__Container .card .icon-wish svg path {
   stroke: #7C6A0A;
@@ -142,10 +146,31 @@ main article .image-section img {
 .product-section .furniture .cards__Container .card picture img {
   filter: opacity(0.75);
 }
-.product-section .furniture .cards__Container .card picture img:hover {
+.product-section .furniture .cards__Container .card:hover {
+  background-color: #BABD8D;
+  color: #FFEFF7;
+}
+.product-section .furniture .cards__Container .card:hover picture img {
   filter: opacity(1);
 }
 
+.info-section .about-us h2 {
+  font-size: 2rem;
+}
+.info-section .about-us .mission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FA9500;
+  text-align: center;
+  margin-inline: auto;
+}
+.info-section .about-us .mission .earth, .info-section .about-us .mission .innovations {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 footer {
   background: #FA9500;
   width: 100%;
@@ -176,5 +201,13 @@ footer {
   }
   main article .image-section img {
     height: auto;
+  }
+  .info-section .about-us .mission {
+    flex-direction: column;
+  }
+  .info-section .about-us .mission .earth, .info-section .about-us .mission .innovations {
+    margin: 2rem 0;
+    width: 80%;
+    flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */

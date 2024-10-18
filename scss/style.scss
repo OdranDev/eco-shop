@@ -21,10 +21,10 @@ $Other-color: #FA9500;
 $Other-color-two: #7C6A0A;
 $font-stack: "IBM Plex Sans", sans-serif;
 
-@mixin flexStyles($displayS, $justifyC, $alignC){
+@mixin flexStyles($displayS, $justifyC, $alignI){
     display: $displayS;
     justify-content: $justifyC;
-    align-content: $alignC;
+    align-items: $alignI;
 }
 
 @mixin gridStyle($displayS, $justifyC, $gridTemplateColumns){
@@ -40,6 +40,10 @@ $font-stack: "IBM Plex Sans", sans-serif;
         border: none;
     }
 };
+
+h2 {
+    margin-left: 1rem;
+}
 
 body {
     margin: 0;
@@ -127,7 +131,7 @@ main{
                     display: grid;
                     svg{
                         place-self: end;
-                        margin-bottom: 8px;
+                        margin-bottom: 12px;
                         path{
                             stroke: $Other-color-two;
                         }
@@ -149,7 +153,6 @@ main{
     .furniture{
         @extend .healthcare;
         .cards__Container{
-
             .card{
                 background-color: $third-color;
                 color: $Other-color-two;
@@ -164,10 +167,39 @@ main{
                     img{
                         filter:opacity(.75);
                     }
-                    img:hover{
+                }
+            }
+        }
+        .cards__Container{
+            .card:hover{
+                background-color: $third-color;
+                color: $prim-color;
+                picture{
+                    img{
                         filter: opacity(1);
                     }
                 }
+            }
+        }
+    }
+}
+
+.info-section{
+    .about-us{
+        h2{
+            font-size: 2rem;
+        }
+        .mission{
+            @include flexStyles(flex, center, center);
+            color: $Other-color;
+            text-align: center;
+            margin-inline: auto;
+            .earth{
+                width: 40%;
+                @include flexStyles(flex, center, center);
+            }
+            .innovations{
+                @extend .earth;
             }
         }
     }
@@ -207,6 +239,22 @@ footer{
                     height: auto;
                 }
             }        
+        }
+    }
+
+    .info-section{
+        .about-us{
+            .mission{
+                flex-direction: column;
+                .earth, .innovations{
+                    margin: 2rem 0;
+                    width: 80%;
+                    flex-direction: column;
+                }
+                .innovations{
+                    @extend .earth;
+                }
+            }
         }
     }
 }
