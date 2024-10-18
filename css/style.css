@@ -14,7 +14,7 @@ UNIVERSALS STATEMENTS
         and Mixins
 */
 h2 {
-  margin-left: 1rem;
+  margin: 5rem 0 2rem 1rem;
   font-size: 2rem;
 }
 
@@ -22,9 +22,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #FFEFF7;
+  background: #ffeff7;
   font-family: "IBM Plex Sans", sans-serif;
-  color: #BABD8D;
+  color: #babd8d;
 }
 
 header {
@@ -42,7 +42,7 @@ header nav {
 }
 header nav p {
   margin: 0;
-  color: #7C6A0A;
+  color: #7c6a0a;
   font-size: 2rem;
 }
 header nav .icons {
@@ -69,11 +69,11 @@ main article {
   gap: 2rem;
 }
 main article .impact-section {
-  color: #7C6A0A;
+  color: #7c6a0a;
 }
 main article .impact-section h1 {
   font-size: 3rem;
-  color: #7C6A0A;
+  color: #7c6a0a;
 }
 main article .impact-section p {
   font-size: 1.5rem;
@@ -91,8 +91,8 @@ main article .impact-section button {
   padding: 1rem 2rem;
   border-radius: 24px;
   display: block;
-  background-color: #FA9500;
-  color: #FFEFF7;
+  background-color: #fa9500;
+  color: #ffeff7;
   font-weight: bold;
 }
 main article .image-section img {
@@ -102,7 +102,7 @@ main article .image-section img {
 }
 
 .product-section .healthcare, .product-section .furniture {
-  color: #7C6A0A;
+  color: #7c6a0a;
 }
 .product-section .healthcare .cards__Container, .product-section .furniture .cards__Container {
   margin: 1rem;
@@ -116,7 +116,7 @@ main article .image-section img {
   height: auto;
   margin: 1rem;
   padding: 1rem;
-  background-color: #FFDAC6;
+  background-color: #ffdac6;
   border-radius: 8px;
 }
 .product-section .healthcare .cards__Container .card .icon-wish, .product-section .furniture .cards__Container .card .icon-wish {
@@ -127,7 +127,7 @@ main article .image-section img {
   margin-bottom: 12px;
 }
 .product-section .healthcare .cards__Container .card .icon-wish svg path, .product-section .furniture .cards__Container .card .icon-wish svg path {
-  stroke: #7C6A0A;
+  stroke: #7c6a0a;
 }
 .product-section .healthcare .cards__Container .card picture, .product-section .furniture .cards__Container .card picture {
   width: 100%;
@@ -141,18 +141,19 @@ main article .image-section img {
   border-radius: 8px;
 }
 .product-section .furniture .cards__Container .card {
-  background-color: #BABD8D;
-  color: #7C6A0A;
+  background-color: #babd8d;
+  color: #7c6a0a;
+  transition: 0.3s ease;
 }
 .product-section .furniture .cards__Container .card .icon-wish svg path {
-  stroke: #FFDAC6;
+  stroke: #ffdac6;
 }
 .product-section .furniture .cards__Container .card picture img {
   filter: opacity(0.75);
 }
 .product-section .furniture .cards__Container .card:hover {
-  background-color: #BABD8D;
-  color: #FFEFF7;
+  background-color: #babd8d;
+  color: #ffeff7;
 }
 .product-section .furniture .cards__Container .card:hover picture img {
   filter: opacity(1);
@@ -162,7 +163,7 @@ main article .image-section img {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FA9500;
+  color: #fa9500;
   text-align: center;
   margin-inline: auto;
 }
@@ -173,27 +174,68 @@ main article .image-section img {
   align-items: center;
 }
 .info-section .gallery .images-Container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  gap: 16px;
 }
 .info-section .gallery .images-Container img {
-  width: 30vw;
-  height: 40vh;
+  width: 300px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 8px 30%;
      object-position: 8px 30%;
-  border-radius: 8px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
 }
 .info-section .gallery .images-Container img:hover {
   transform: scale(1.1);
 }
+.info-section .location .map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.info-section .location .map .map-img {
+  width: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  place-self: center;
+  border-radius: 24px;
+}
+.info-section .location .text-map {
+  margin-left: 3rem;
+}
+.info-section .location .text-map h3 {
+  font-weight: bold;
+  color: #fa9500;
+}
+.info-section .location .text-map p {
+  color: black;
+}
 
 footer {
-  background: #FA9500;
+  background: #fa9500;
   width: 100%;
-  height: 100px;
+  height: auto;
+  color: #ffeff7;
+}
+footer h3 {
+  padding: 2rem;
+}
+footer p {
+  margin: 1rem 2rem;
+}
+footer .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 40px;
 }
 
 @media (max-width: 700px) {
@@ -227,7 +269,8 @@ footer {
   .info-section .about-us .mission {
     flex-direction: column;
   }
-  .info-section .about-us .mission .earth, .info-section .about-us .mission .innovations {
+  .info-section .about-us .mission .earth,
+  .info-section .about-us .mission .innovations {
     margin: 2rem 0;
     width: 80%;
     flex-direction: column;
