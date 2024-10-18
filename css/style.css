@@ -15,6 +15,7 @@ UNIVERSALS STATEMENTS
 */
 h2 {
   margin-left: 1rem;
+  font-size: 2rem;
 }
 
 body {
@@ -52,6 +53,9 @@ header nav .icons button {
   border-style: none;
   border: none;
 }
+header nav .icons button:hover {
+  transform: scale(1.1);
+}
 
 main {
   width: 100%;
@@ -79,6 +83,9 @@ main article .impact-section button {
   border-style: none;
   border: none;
 }
+main article .impact-section button:hover {
+  transform: scale(1.1);
+}
 main article .impact-section button {
   margin-top: 5rem;
   padding: 1rem 2rem;
@@ -96,9 +103,6 @@ main article .image-section img {
 
 .product-section .healthcare, .product-section .furniture {
   color: #7C6A0A;
-}
-.product-section .healthcare h2, .product-section .furniture h2 {
-  font-size: 2rem;
 }
 .product-section .healthcare .cards__Container, .product-section .furniture .cards__Container {
   margin: 1rem;
@@ -154,9 +158,6 @@ main article .image-section img {
   filter: opacity(1);
 }
 
-.info-section .about-us h2 {
-  font-size: 2rem;
-}
 .info-section .about-us .mission {
   display: flex;
   justify-content: center;
@@ -171,6 +172,24 @@ main article .image-section img {
   justify-content: center;
   align-items: center;
 }
+.info-section .gallery .images-Container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.info-section .gallery .images-Container img {
+  width: 30vw;
+  height: 40vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 8px 30%;
+     object-position: 8px 30%;
+  border-radius: 8px;
+}
+.info-section .gallery .images-Container img:hover {
+  transform: scale(1.1);
+}
+
 footer {
   background: #FA9500;
   width: 100%;
@@ -198,6 +217,9 @@ footer {
     background: none;
     border-style: none;
     border: none;
+  }
+  main article .impact-section button button:hover {
+    transform: scale(1.1);
   }
   main article .image-section img {
     height: auto;

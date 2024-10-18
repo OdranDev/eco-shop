@@ -38,11 +38,15 @@ $font-stack: "IBM Plex Sans", sans-serif;
         background: none;
         border-style: none;
         border: none;
+        &:hover{
+            transform: scale(1.1);
+        }
     }
 };
 
 h2 {
     margin-left: 1rem;
+    font-size: 2rem;
 }
 
 body {
@@ -113,9 +117,6 @@ main{
 .product-section{
     .healthcare{
         color: $Other-color-two;
-        h2{
-            font-size: 2rem;
-        }
         .cards__Container{
             margin: 1rem;
             @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
@@ -186,9 +187,6 @@ main{
 
 .info-section{
     .about-us{
-        h2{
-            font-size: 2rem;
-        }
         .mission{
             @include flexStyles(flex, center, center);
             color: $Other-color;
@@ -200,6 +198,21 @@ main{
             }
             .innovations{
                 @extend .earth;
+            }
+        }
+    }
+    .gallery{
+        .images-Container{
+            @include flexStyles(flex, space-evenly, center);
+            img{
+                width: 30vw;
+                height: 40vh;
+                object-fit: cover;
+                object-position: 8px 30%;
+                border-radius: 8px;
+                &:hover{
+                    transform: scale(1.1);
+                }
             }
         }
     }
