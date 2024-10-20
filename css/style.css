@@ -41,11 +41,12 @@ header nav {
   flex-wrap: wrap;
 }
 header nav p {
-  margin: 0;
+  margin: 0 1rem;
   color: #7c6a0a;
   font-size: 2rem;
 }
 header nav .icons {
+  margin: 1rem;
   align-self: center;
 }
 header nav .icons button {
@@ -97,7 +98,7 @@ main article .impact-section button {
 }
 main article .image-section img {
   width: 100%;
-  height: 90vh;
+  height: 90%;
   border-radius: 8px;
 }
 
@@ -112,7 +113,7 @@ main article .image-section img {
   justify-items: center;
 }
 .product-section .healthcare .cards__Container .card, .product-section .furniture .cards__Container .card {
-  width: 250px;
+  width: 290px;
   height: auto;
   margin: 1rem;
   padding: 1rem;
@@ -135,10 +136,13 @@ main article .image-section img {
 }
 .product-section .healthcare .cards__Container .card picture img, .product-section .furniture .cards__Container .card picture img {
   width: 100%;
-  height: 70%;
+  height: 60%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
+}
+.product-section .healthcare .cards__Container .card:hover, .product-section .furniture .cards__Container .card:hover {
+  border: 1px solid #e86424;
 }
 .product-section .furniture .cards__Container .card {
   background-color: #babd8d;
