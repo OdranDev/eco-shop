@@ -117,8 +117,9 @@ main article .image-section img {
   height: auto;
   margin: 1rem;
   padding: 1rem;
-  background-color: #ffdac6;
+  background-color: #babd8d;
   border-radius: 8px;
+  transition: 0.3s ease;
 }
 .product-section .healthcare .cards__Container .card .icon-wish, .product-section .furniture .cards__Container .card .icon-wish {
   display: grid;
@@ -140,29 +141,15 @@ main article .image-section img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
-}
-.product-section .healthcare .cards__Container .card:hover, .product-section .furniture .cards__Container .card:hover {
-  border: 1px solid #e86424;
-}
-.product-section .furniture .cards__Container .card {
-  background-color: #babd8d;
-  color: #7c6a0a;
-  transition: 0.3s ease;
-}
-.product-section .furniture .cards__Container .card .icon-wish svg path {
-  stroke: #ffdac6;
-}
-.product-section .furniture .cards__Container .card picture img {
   filter: opacity(0.75);
 }
-.product-section .furniture .cards__Container .card:hover {
+.product-section .healthcare .cards__Container .card:hover, .product-section .furniture .cards__Container .card:hover {
   background-color: #babd8d;
   color: #ffeff7;
 }
-.product-section .furniture .cards__Container .card:hover picture img {
+.product-section .healthcare .cards__Container .card:hover picture img, .product-section .furniture .cards__Container .card:hover picture img {
   filter: opacity(1);
 }
-
 .info-section .about-us .mission {
   display: flex;
   justify-content: center;
