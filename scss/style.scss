@@ -38,6 +38,7 @@ $font-stack: "IBM Plex Sans", sans-serif;
     background: none;
     border-style: none;
     border: none;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -57,20 +58,24 @@ body {
   font-family: $font-stack;
   color: $third-color;
 }
+
 header {
   width: 100%;
   max-height: 100px;
+
   nav {
     width: 90%;
     margin-inline: auto;
     padding: 1rem;
     @include flexStyles(flex, space-between, center);
     flex-wrap: wrap;
+
     p {
       margin: 0 1rem;
       color: $Other-color-two;
       font-size: 2rem;
     }
+
     .icons {
       margin: 1rem;
       align-self: center;
@@ -78,24 +83,31 @@ header {
     }
   }
 }
+
 main {
   width: 100%;
   height: auto;
+
   article {
     width: 90%;
     margin-inline: auto;
     @include gridStyle(grid, null, repeat(2, minmax(300px, 1fr)));
     gap: 2rem;
+
     .impact-section {
       color: $Other-color-two;
+
       h1 {
         font-size: 3rem;
         color: $Other-color-two;
       }
+
       p {
         font-size: 1.5rem;
       }
+
       @include buttons;
+
       button {
         margin-top: 5rem;
         padding: 1rem 2rem;
@@ -106,6 +118,7 @@ main {
         font-weight: bold;
       }
     }
+
     .image-section {
       img {
         width: 100%;
@@ -115,13 +128,16 @@ main {
     }
   }
 }
+
 .product-section {
   .healthcare {
     color: $Other-color-two;
+
     .cards__Container {
       margin: 1rem;
       @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
       justify-items: center;
+
       .card {
         width: 260px;
         height: auto;
@@ -129,19 +145,24 @@ main {
         padding: 1rem;
         background-color: $third-color;
         border-radius: 8px;
+
         .icon-wish {
           display: grid;
+
           svg {
             place-self: end;
             margin-bottom: 12px;
+
             path {
               stroke: $Other-color-two;
             }
           }
         }
+
         picture {
           width: 100%;
           height: 100%;
+
           img {
             width: 100%;
             height: 60%;
@@ -151,10 +172,13 @@ main {
             // aspect-ratio: 16/9
           }
         }
+
         transition: 0.3s ease;
+
         &:hover {
           background-color: $third-color;
           color: $prim-color;
+
           picture {
             img {
               filter: opacity(1);
@@ -164,6 +188,7 @@ main {
       }
     }
   }
+
   .furniture {
     @extend .healthcare;
   }
@@ -176,20 +201,24 @@ main {
       color: $Other-color;
       text-align: center;
       margin-inline: auto;
+
       .earth {
         width: 40%;
         @include flexStyles(flex, center, center);
       }
+
       .innovations {
         @extend .earth;
       }
     }
   }
+
   .gallery {
     .images-Container {
       @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
       justify-items: center;
       gap: 16px;
+
       img {
         width: 300px;
         height: 300px;
@@ -197,17 +226,20 @@ main {
         object-position: 8px 30%;
         border-radius: 16px;
         transition: transform 0.3s ease;
+
         &:hover {
           transform: scale(1.1);
         }
       }
     }
   }
+
   .location {
     .map {
       @include flexStyles(flex, center, center);
       flex-direction: column;
       width: 100%;
+
       .map-img {
         width: 90%;
         object-fit: cover;
@@ -215,29 +247,92 @@ main {
         border-radius: 24px;
       }
     }
+
     .text-map {
       margin-left: 3rem;
+
       h3 {
         font-weight: bold;
         color: $Other-color;
       }
+
       p {
         color: black;
       }
     }
   }
 }
+
+.contactUs {
+  form {
+    width: 90%;
+    margin: 1rem auto;
+    border-radius: 8px;
+    fieldset {
+      border-radius: 8px;
+      legend {
+        font-size: 2rem;
+        text-align: center;
+      }
+      .info--Container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        div{
+          width: 30%;
+         display: flex;
+         flex-direction: column; 
+         input{
+          border-radius: 4px;
+          border: none;
+         }
+        }
+      }
+      .container__Comentario{
+        text-align: center;
+        margin: 1rem 0;
+        textarea{
+          width: 95%;
+          margin: 0 auto;
+          border-radius: 4px;
+          border: none;
+          display: block;
+        }
+      }
+      .container__Submit {
+        @include buttons; // Aplicar el mixin directamente al botón
+        // Puedes agregar más estilos específicos aquí si lo necesitas
+        display: flex;
+        justify-content: center;
+        .submit {
+          will-change: contents;
+          width: 30%;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+          background-color: $button-color;
+          border-radius: 4px;
+          color: $prim-color;
+        }
+      }
+    }
+  }
+}
+
 footer {
   background: $Other-color;
   width: 100%;
   height: auto;
   color: $prim-color;
+
   h3 {
     padding: 2rem;
   }
+
   p {
     margin: 1rem 2rem;
   }
+
   .social-media {
     @include flexStyles(flex, center, center);
     gap: 40px;
@@ -251,17 +346,20 @@ footer {
       width: 100%;
       padding: 0;
     }
+
     .icons {
       button {
         padding: 0;
       }
     }
   }
+
   main {
     article {
       gap: 1rem;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(2, minmax(300px, auto-fit));
+
       .impact-section {
         button {
           margin: 3rem;
@@ -269,6 +367,7 @@ footer {
           @include buttons;
         }
       }
+
       .image-section {
         img {
           height: auto;
@@ -281,12 +380,14 @@ footer {
     .about-us {
       .mission {
         flex-direction: column;
+
         .earth,
         .innovations {
           margin: 2rem 0;
           width: 80%;
           flex-direction: column;
         }
+
         .innovations {
           @extend .earth;
         }
