@@ -270,6 +270,7 @@ main {
   .formulary {
 
     p {
+      text-align: center;
       color: $Other-color
     }
 
@@ -336,6 +337,7 @@ main {
       @include buttons;
       display: flex;
       justify-content: center;
+
       .button {
         padding: 1rem 2rem;
         border-radius: 24px;

@@ -214,6 +214,7 @@ main article .image-section img {
 }
 
 .contactUs .formulary p {
+  text-align: center;
   color: #fa9500;
 }
 .contactUs .formulary .info--Container {
