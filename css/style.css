@@ -213,12 +213,6 @@ main article .image-section img {
   color: black;
 }
 
-.contactUs .formulary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 .contactUs .formulary p {
   color: #fa9500;
 }
@@ -239,11 +233,11 @@ main article .image-section img {
 .contactUs .formulary .info--Container .info--container__Name input, .contactUs .formulary .info--Container .info--container__Email input, .contactUs .formulary .info--Container .info--container__LastName input {
   width: 99%;
   height: 2rem;
-  border: none;
+  border: 1px solid #babd8d;
   border-radius: 4px;
 }
 .contactUs .formulary .info--Container .info--container__Name input:focus-visible, .contactUs .formulary .info--Container .info--container__Email input:focus-visible, .contactUs .formulary .info--Container .info--container__LastName input:focus-visible {
-  border: 1px solid #ffdac6;
+  outline: none;
 }
 .contactUs .formulary .info--Container .info--container__Name input::-moz-placeholder, .contactUs .formulary .info--Container .info--container__Email input::-moz-placeholder, .contactUs .formulary .info--Container .info--container__LastName input::-moz-placeholder {
   color: lightgray;
@@ -257,25 +251,35 @@ main article .image-section img {
 }
 .contactUs .formulary .info--Container .info--container__Comentario textarea {
   width: 99%;
-  height: 2rem;
-  border: none;
+  height: 4rem;
+  border: 1px solid #babd8d;
   border-radius: 4px;
 }
-.contactUs .formulary .info--Container .info--container__Submit {
+.contactUs .formulary .info--Container .info--container__Comentario textarea:focus-visible,
+.contactUs .formulary .info--Container .info--container__Comentario textarea :focus {
+  outline: none;
+}
+.contactUs .formulary .info--Container .info--container__Comentario textarea::-moz-placeholder {
+  color: lightgray;
+}
+.contactUs .formulary .info--Container .info--container__Comentario textarea::placeholder {
+  color: lightgray;
+}
+.contactUs .formulary .info--container__Submit {
   display: flex;
   justify-content: center;
 }
-.contactUs .formulary .info--Container .info--container__Submit button {
+.contactUs .formulary .info--container__Submit button {
   background: none;
   border-style: none;
   border: none;
 }
-.contactUs .formulary .info--Container .info--container__Submit button:hover {
+.contactUs .formulary .info--container__Submit button:hover {
   will-change: contents;
   transition: transform 0.3s ease;
   transform: scale(1.1);
 }
-.contactUs .formulary .info--Container .info--container__Submit .button {
+.contactUs .formulary .info--container__Submit .button {
   padding: 1rem 2rem;
   border-radius: 24px;
   background-color: #e86424;
@@ -340,6 +344,12 @@ footer .social-media {
   .info-section .about-us .mission .innovations {
     margin: 2rem 0;
     width: 80%;
+    flex-direction: column;
+  }
+  .contactUs .formulary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */

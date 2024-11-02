@@ -268,11 +268,11 @@ main {
 .contactUs {
 
   .formulary {
-    @include flexStyles(flex, center, center);
-    flex-direction: column;
-    p{
+
+    p {
       color: $Other-color
     }
+
     .info--Container {
       @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
       margin: 1rem;
@@ -288,11 +288,11 @@ main {
         input {
           width: 99%;
           height: 2rem;
-          border: none;
+          border: 1px solid $third-color;
           border-radius: 4px;
 
           &:focus-visible {
-            border: 1px solid $second-color;
+            outline: none;
           }
 
           &::placeholder {
@@ -316,23 +316,32 @@ main {
 
         textarea {
           width: 99%;
-          height: 2rem;
-          border: none;
+          height: 4rem;
+          border: 1px solid $third-color;
           border-radius: 4px;
+
+          &:focus-visible,
+          :focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: lightgray;
+          }
         }
       }
 
-      .info--container__Submit {
-        @include buttons;
-        display: flex;
-        justify-content: center;
-        .button {
-          padding: 1rem 2rem;
-          border-radius: 24px;
-          background-color: $button-color;
-          color: $prim-color;
-          font-weight: bold;
-        }
+    }
+    .info--container__Submit {
+      @include buttons;
+      display: flex;
+      justify-content: center;
+      .button {
+        padding: 1rem 2rem;
+        border-radius: 24px;
+        background-color: $button-color;
+        color: $prim-color;
+        font-weight: bold;
       }
     }
   }
@@ -412,6 +421,14 @@ footer {
           @extend .earth;
         }
       }
+    }
+  }
+
+  .contactUs {
+
+    .formulary {
+      @include flexStyles(flex, center, center);
+      flex-direction: column;
     }
   }
 }
