@@ -14,7 +14,7 @@ UNIVERSALS STATEMENTS
         and Mixins
 */
 h2 {
-  margin: 5rem 0 2rem 1rem;
+  margin-left: 2rem;
   font-size: 2rem;
 }
 
@@ -55,6 +55,8 @@ header nav .icons button {
   border: none;
 }
 header nav .icons button:hover {
+  will-change: contents;
+  transition: transform 0.3s ease;
   transform: scale(1.1);
 }
 
@@ -85,9 +87,11 @@ main article .impact-section button {
   border: none;
 }
 main article .impact-section button:hover {
+  will-change: contents;
+  transition: transform 0.3s ease;
   transform: scale(1.1);
 }
-main article .impact-section button {
+main article .impact-section .button {
   margin-top: 5rem;
   padding: 1rem 2rem;
   border-radius: 24px;
@@ -209,64 +213,74 @@ main article .image-section img {
   color: black;
 }
 
-.contactUs form {
-  width: 90%;
-  margin: 1rem auto;
-  border-radius: 8px;
-}
-.contactUs form fieldset {
-  border-radius: 8px;
-}
-.contactUs form fieldset legend {
-  font-size: 2rem;
-  text-align: center;
-}
-.contactUs form fieldset .info--Container {
+.contactUs .formulary {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.contactUs form fieldset .info--Container div {
-  width: 30%;
-  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
-.contactUs form fieldset .info--Container div input {
-  border-radius: 4px;
+.contactUs .formulary p {
+  color: #fa9500;
+}
+.contactUs .formulary .info--Container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #ffdac6;
+  color: #7c6a0a;
+}
+.contactUs .formulary .info--Container .info--container__Name, .contactUs .formulary .info--Container .info--container__Email, .contactUs .formulary .info--Container .info--container__LastName {
+  width: 90%;
+  margin: 1rem auto;
+}
+.contactUs .formulary .info--Container .info--container__Name input, .contactUs .formulary .info--Container .info--container__Email input, .contactUs .formulary .info--Container .info--container__LastName input {
+  width: 99%;
+  height: 2rem;
   border: none;
-}
-.contactUs form fieldset .container__Comentario {
-  text-align: center;
-  margin: 1rem 0;
-}
-.contactUs form fieldset .container__Comentario textarea {
-  width: 95%;
-  margin: 0 auto;
   border-radius: 4px;
-  border: none;
-  display: block;
 }
-.contactUs form fieldset .container__Submit {
+.contactUs .formulary .info--Container .info--container__Name input:focus-visible, .contactUs .formulary .info--Container .info--container__Email input:focus-visible, .contactUs .formulary .info--Container .info--container__LastName input:focus-visible {
+  border: 1px solid #ffdac6;
+}
+.contactUs .formulary .info--Container .info--container__Name input::-moz-placeholder, .contactUs .formulary .info--Container .info--container__Email input::-moz-placeholder, .contactUs .formulary .info--Container .info--container__LastName input::-moz-placeholder {
+  color: lightgray;
+}
+.contactUs .formulary .info--Container .info--container__Name input::placeholder, .contactUs .formulary .info--Container .info--container__Email input::placeholder, .contactUs .formulary .info--Container .info--container__LastName input::placeholder {
+  color: lightgray;
+}
+.contactUs .formulary .info--Container .info--container__Comentario {
+  width: 90%;
+  margin: 1rem auto;
+}
+.contactUs .formulary .info--Container .info--container__Comentario textarea {
+  width: 99%;
+  height: 2rem;
+  border: none;
+  border-radius: 4px;
+}
+.contactUs .formulary .info--Container .info--container__Submit {
   display: flex;
   justify-content: center;
 }
-.contactUs form fieldset .container__Submit button {
+.contactUs .formulary .info--Container .info--container__Submit button {
   background: none;
   border-style: none;
   border: none;
 }
-.contactUs form fieldset .container__Submit button:hover {
+.contactUs .formulary .info--Container .info--container__Submit button:hover {
+  will-change: contents;
+  transition: transform 0.3s ease;
   transform: scale(1.1);
 }
-.contactUs form fieldset .container__Submit .submit {
-  will-change: contents;
-  width: 30%;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+.contactUs .formulary .info--Container .info--container__Submit .button {
+  padding: 1rem 2rem;
+  border-radius: 24px;
   background-color: #e86424;
-  border-radius: 4px;
   color: #ffeff7;
+  font-weight: bold;
 }
 
 footer {
@@ -312,6 +326,8 @@ footer .social-media {
     border: none;
   }
   main article .impact-section button button:hover {
+    will-change: contents;
+    transition: transform 0.3s ease;
     transform: scale(1.1);
   }
   main article .image-section img {

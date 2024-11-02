@@ -40,13 +40,15 @@ $font-stack: "IBM Plex Sans", sans-serif;
     border: none;
 
     &:hover {
+      will-change: contents;
+      transition: transform 0.3s ease;
       transform: scale(1.1);
     }
   }
 }
 
 h2 {
-  margin: 5rem 0 2rem 1rem;
+  margin-left: 2rem;
   font-size: 2rem;
 }
 
@@ -108,7 +110,7 @@ main {
 
       @include buttons;
 
-      button {
+      .button {
         margin-top: 5rem;
         padding: 1rem 2rem;
         border-radius: 24px;
@@ -264,60 +266,78 @@ main {
 }
 
 .contactUs {
-  form {
-    width: 90%;
-    margin: 1rem auto;
-    border-radius: 8px;
-    fieldset {
+
+  .formulary {
+    @include flexStyles(flex, center, center);
+    flex-direction: column;
+    p{
+      color: $Other-color
+    }
+    .info--Container {
+      @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
+      margin: 1rem;
+      padding: 1rem;
       border-radius: 8px;
-      legend {
-        font-size: 2rem;
-        text-align: center;
-      }
-      .info--Container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        div{
-          width: 30%;
-         display: flex;
-         flex-direction: column; 
-         input{
-          border-radius: 4px;
+      background-color: $second-color;
+      color: $Other-color-two;
+
+      .info--container__Name {
+        width: 90%;
+        margin: 1rem auto;
+
+        input {
+          width: 99%;
+          height: 2rem;
           border: none;
-         }
+          border-radius: 4px;
+
+          &:focus-visible {
+            border: 1px solid $second-color;
+          }
+
+          &::placeholder {
+            color: lightgray;
+          }
         }
       }
-      .container__Comentario{
-        text-align: center;
-        margin: 1rem 0;
-        textarea{
-          width: 95%;
-          margin: 0 auto;
-          border-radius: 4px;
+
+      .info--container__LastName {
+        @extend .info--container__Name;
+      }
+
+      .info--container__Email {
+        @extend .info--container__Name;
+
+      }
+
+      .info--container__Comentario {
+        width: 90%;
+        margin: 1rem auto;
+
+        textarea {
+          width: 99%;
+          height: 2rem;
           border: none;
-          display: block;
+          border-radius: 4px;
         }
       }
-      .container__Submit {
-        @include buttons; // Aplicar el mixin directamente al botón
-        // Puedes agregar más estilos específicos aquí si lo necesitas
+
+      .info--container__Submit {
+        @include buttons;
         display: flex;
         justify-content: center;
-        .submit {
-          will-change: contents;
-          width: 30%;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-          transition: transform 0.3s ease;
+        .button {
+          padding: 1rem 2rem;
+          border-radius: 24px;
           background-color: $button-color;
-          border-radius: 4px;
           color: $prim-color;
+          font-weight: bold;
         }
       }
     }
   }
 }
+
 
 footer {
   background: $Other-color;

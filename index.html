@@ -50,7 +50,7 @@
           Debido al impacto ambiental siendo las acciones humanas las que modifican el ambiente. Eco-store se compromete
           a elaborar sus productos de manera artesanal y con sus materiales que favorecen al cuidado del medio ambiente.
         </p>
-        <button aria-label="Conoce más información">Conoce más</button>
+        <button class="button" aria-label="Conoce más información">Conoce más</button>
       </div>
       <div class="image-section">
         <img src="./assets/img/main.jpg" alt="imagen" />
@@ -364,31 +364,30 @@
       </div>
     </section>
     <section class="contactUs">
-      <form action="https://formspree.io/f/xwpklqjl" method="POST">
-        <fieldset>
-          <legend>Información de contacto</legend>
-          <div class="info--Container">
-            <div class="info--container__Name">
-              <label for="first-name">First name:</label>
-            <input type="text" id="first-name" name="first-name" value="" placeholder="Ej: Jhon">
-            </div>
-            <div class="info--container__LastName">
-              <label for="last-name">Last name:</label>
-              <input type="text" id="last-name" name="last-name" value="" placeholder="Ej: Doe">
-            </div>
-            <div class="info--container__Email">
-              <label for="Email">Email:</label>
-              <input type="email" id="Email" name="Email" value="" placeholder="my-email@eco.com">
-            </div>
+      <h2>Contáctanos</h2>
+      <form class="formulary" action="https://formspree.io/f/xwpklqjl" method="POST">
+        <p>¿Tienes alguna pregunta o sugerencia?.</p>
+        <div class="info--Container">
+          <div class="info--container__Name">
+            <label for="first-name">Nombre:</label>
+            <input type="text" id="first-name" name="first-name" value="" placeholder=" Ej: Jhon">
           </div>
-          <div class="container__Comentario">
-            <label for="comentarios">Escribe tu comentario o pregunta</label>
-            <textarea name="comentarios" id="comentarios" minlength="10" maxlength="180"></textarea>
+          <div class="info--container__LastName">
+            <label for="last-name">Apellido:</label>
+            <input type="text" id="last-name" name="last-name" value="" placeholder=" Ej: Doe">
           </div>
-          <div class="container__Submit">
-            <button class="submit" type="submit" value="Enviar">Enviar</button>
+          <div class="info--container__Email">
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name=" Email" value="" placeholder=" my-email@eco.com">
           </div>
-        </fieldset>
+          <div class="info--container__Comentario">
+            <label for="comentarios">Cuentanos </label>
+            <textarea name="comentarios" id="comentarios" placeholder=" Escribe tu comentario o pregunta aqui" minlength="10" maxlength="360"></textarea>
+          </div>
+          <div class="info--container__Submit">
+            <button class="button" type="submit" value="Enviar">Enviar</button>
+          </div>
+        </div>
       </form>
     </section>
   </main>
