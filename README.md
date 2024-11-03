@@ -40,7 +40,7 @@ Eco-store es una tienda en línea dedicada a ofrecer productos ecológicos y sos
 👐 Calidad Artesanal: Elaboración artesanal con materiales de alta calidad.
 
 📍 Información Adicional
-🏢 Ubicación: Centro Mayor Centro Comercial, Calle 13 # 50-55, Bogotá, Colombia.
+🏢 Ubicación: Centro Mayor Centro Comercial, ACB, Treinta y Tres Orientales 440, C1236 Cdad. Autónoma de Buenos Aires, Argentina.
 
 📧 Contacto: contacto@eco-store.com | +57 123 456 7890
 
