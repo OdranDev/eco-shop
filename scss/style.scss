@@ -51,8 +51,10 @@ h2 {
   margin-left: 2rem;
   font-size: 2rem;
 }
-html{
+
+html {
   scroll-behavior: smooth;
+
   body {
     margin: 0;
     padding: 0;
@@ -60,6 +62,8 @@ html{
     background: $prim-color;
     font-family: $font-stack;
     color: $third-color;
+    scroll-behavior: smooth;
+
   }
 }
 
@@ -79,12 +83,15 @@ header {
       color: $Other-color-two;
       font-size: 2rem;
     }
-    ul{
+
+    ul {
       display: flex;
-      li{
+
+      li {
         list-style: none;
         margin: 8px;
-        a{
+
+        a {
           text-decoration: none;
           color: $Other-color-two;
         }
@@ -347,6 +354,7 @@ main {
       }
 
     }
+
     .info--container__Submit {
       @include buttons;
       display: flex;
@@ -381,15 +389,21 @@ footer {
     @include flexStyles(flex, center, center);
     gap: 40px;
     padding-bottom: 40px;
+
+    svg {
+      font-size: 3rem;
+    }
+
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   header {
     nav {
       width: 100%;
       padding: 0;
-      ul{
+
+      ul {
         display: none;
       }
     }
@@ -447,7 +461,8 @@ footer {
     .formulary {
       @include flexStyles(flex, center, center);
       flex-direction: column;
-      .info--Container{
+
+      .info--Container {
         @include gridStyle(grid, center, repeat(auto-fit, minmax(320px, 1fr)));
       }
     }

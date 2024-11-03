@@ -28,6 +28,7 @@ html body {
   background: #ffeff7;
   font-family: "IBM Plex Sans", sans-serif;
   color: #babd8d;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -322,8 +323,11 @@ footer .social-media {
   gap: 40px;
   padding-bottom: 40px;
 }
+footer .social-media svg {
+  font-size: 3rem;
+}
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   header nav {
     width: 100%;
     padding: 0;
