@@ -51,15 +51,16 @@ h2 {
   margin-left: 2rem;
   font-size: 2rem;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: $prim-color;
-  font-family: $font-stack;
-  color: $third-color;
+html{
   scroll-behavior: smooth;
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: $prim-color;
+    font-family: $font-stack;
+    color: $third-color;
+  }
 }
 
 header {
@@ -157,7 +158,7 @@ main {
         height: auto;
         margin: 1rem;
         padding: 1rem;
-        background-color: $third-color;
+        background-color: $second-color;
         border-radius: 8px;
 
         .icon-wish {
@@ -179,7 +180,7 @@ main {
 
           img {
             width: 100%;
-            height: 60%;
+            height: 50%;
             object-fit: cover;
             border-radius: 8px;
             filter: opacity(0.75);
@@ -192,6 +193,7 @@ main {
         &:hover {
           background-color: $third-color;
           color: $prim-color;
+          transform: scale(1.1);
 
           picture {
             img {
@@ -287,7 +289,7 @@ main {
     }
 
     .info--Container {
-      @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
+      @include gridStyle(grid, center, repeat(2, minmax(320px, 1fr)));
       margin: 1rem;
       padding: 1rem;
       border-radius: 8px;
@@ -351,7 +353,7 @@ main {
       justify-content: center;
 
       .button {
-        padding: 1rem 2rem;
+        padding: 1rem 4rem;
         border-radius: 24px;
         background-color: $button-color;
         color: $prim-color;
@@ -360,7 +362,6 @@ main {
     }
   }
 }
-
 
 footer {
   background: $Other-color;
@@ -446,6 +447,9 @@ footer {
     .formulary {
       @include flexStyles(flex, center, center);
       flex-direction: column;
+      .info--Container{
+        @include gridStyle(grid, center, repeat(auto-fit, minmax(320px, 1fr)));
+      }
     }
   }
 }
