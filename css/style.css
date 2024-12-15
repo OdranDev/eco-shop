@@ -48,6 +48,7 @@ header nav p {
   margin: 0 1rem;
   color: #7c6a0a;
   font-size: 2rem;
+  font-weight: bold;
 }
 header nav ul {
   display: flex;
@@ -59,17 +60,22 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   color: #7c6a0a;
+  font-size: 1.5rem;
 }
-header nav .icons {
+header nav ul li a:hover {
+  font-weight: bold;
+  color: #e86424;
+}
+header .icons {
   margin: 1rem;
   align-self: center;
 }
-header nav .icons button {
+header .icons button {
   background: none;
   border-style: none;
   border: none;
 }
-header nav .icons button:hover {
+header .icons button:hover {
   will-change: contents;
   transition: transform 0.3s ease;
   transform: scale(1.1);
@@ -132,27 +138,27 @@ main article .image-section img {
   justify-items: center;
 }
 .product-section .healthcare .cards__Container .card, .product-section .furniture .cards__Container .card {
-  width: 260px;
-  height: auto;
+  width: 250px;
+  height: 400px;
   margin: 1rem;
   padding: 1rem;
   background-color: #ffdac6;
   border-radius: 8px;
+  overflow: hidden;
   transition: 0.3s ease;
-}
-.product-section .healthcare .cards__Container .card .icon-wish, .product-section .furniture .cards__Container .card .icon-wish {
-  display: grid;
-}
-.product-section .healthcare .cards__Container .card .icon-wish svg, .product-section .furniture .cards__Container .card .icon-wish svg {
-  place-self: end;
-  margin-bottom: 12px;
-}
-.product-section .healthcare .cards__Container .card .icon-wish svg path, .product-section .furniture .cards__Container .card .icon-wish svg path {
-  stroke: #7c6a0a;
 }
 .product-section .healthcare .cards__Container .card picture, .product-section .furniture .cards__Container .card picture {
   width: 100%;
-  height: 100%;
+  height: 45%;
+}
+.product-section .healthcare .cards__Container .card picture .icon-wish, .product-section .furniture .cards__Container .card picture .icon-wish {
+  display: grid;
+}
+.product-section .healthcare .cards__Container .card picture .icon-wish svg, .product-section .furniture .cards__Container .card picture .icon-wish svg {
+  place-self: end;
+}
+.product-section .healthcare .cards__Container .card picture .icon-wish svg path, .product-section .furniture .cards__Container .card picture .icon-wish svg path {
+  stroke: #7c6a0a;
 }
 .product-section .healthcare .cards__Container .card picture img, .product-section .furniture .cards__Container .card picture img {
   width: 100%;
@@ -169,6 +175,22 @@ main article .image-section img {
 }
 .product-section .healthcare .cards__Container .card:hover picture img, .product-section .furniture .cards__Container .card:hover picture img {
   filter: opacity(1);
+}
+.product-section .healthcare .cards__Container .card .info-product, .product-section .furniture .cards__Container .card .info-product {
+  width: 100%;
+  height: 45%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+.product-section .healthcare .cards__Container .card .info-product .nameProduct, .product-section .furniture .cards__Container .card .info-product .nameProduct {
+  align-self: flex-start;
+}
+.product-section .healthcare .cards__Container .card .info-product .description, .product-section .furniture .cards__Container .card .info-product .description {
+  align-self: center;
+}
+.product-section .healthcare .cards__Container .card .info-product .price, .product-section .furniture .cards__Container .card .info-product .price {
+  place-self: flex-end;
 }
 .info-section .about-us .mission {
   display: flex;
@@ -309,6 +331,7 @@ footer {
   width: 100%;
   height: auto;
   color: #ffeff7;
+  border-radius: 12px 12px 0 0;
 }
 footer h3 {
   padding: 2rem;
