@@ -4,20 +4,22 @@ console.log(
 
 /*
 
- // Selecciona el elemento al que le quieres agregar el evento
+// Selecciona el elemento al que le quieres agregar el evento
  const healthcare = document.getElementById("healthcare")
  let contador = 0;
  
  // Agrega el evento de clic
  healthcare.addEventListener('click', () => {
-   contador++;
+    contador++;
    console.log('Has hecho clic', contador, 'veces.');
    // Aquí puedes hacer lo que quieras con el valor del contador,
    // por ejemplo, mostrarlo en un elemento HTML:
    // document.getElementById('resultado').textContent = contador;
- });
- 
- */
+   });
+   
+   */
+const cardsContainerHealthcare = document.getElementById("cards__ContainerH");
+const cardsContainerFurniture = document.getElementById("cards__ContainerF");
 
 const productos = {
   healthcare: [
@@ -89,38 +91,65 @@ const productos = {
 
   furniture: [
     {
-      imagen: "./assets/img/products/guasha-kit.jpg",
-      alt: "Rodillo facial de jade...",
-      titulo: "Guasha-kit",
-      descripcion: "Herramientas de belleza...",
-      precio: "XXXX",
+      imagen: "./assets/img/furniture/desk-lamp.jpg",
+      alt: "Lámpara de escritorio de madera y metal es la combinación perfecta de estilo y funcionalidad.",
+      titulo: "Desk-lamp",
+      descripcion:
+        "Ilumina tu espacio con estilo y funcionalidad. Con su diseño elegante y ajustable, esta lámpara es ideal para cualquier espacio de trabajo o estudio. Su luz cálida y suave crea un ambiente acogedor y perfecto.",
+      precio: "200.00",
+    },
+    {
+      imagen: "./assets/img/furniture/mini-table.jpg",
+      alt: "decoración para el hogar hermosa y sostenible que elevará tu espacio e inspirará a vivir tu mejor vida.",
+      titulo: "Mini-table",
+      descripcion: "Nuestros productos están cuidadosamente elaborados con materiales naturales, y creemos que cada pieza debe ser un reflejo de tu estilo y personalidad únicos.",
+      precio: "250.00",
+    },
+    {
+      imagen: "./assets/img/furniture/mirror.jpg",
+      alt: "Espejo redondo con un marco de madera. El espejo tiene un diseño minimalista y elegante, con un marco de madera natural que le da un aspecto cálido y acogedor.",
+      titulo: "Mirror",
+      descripcion: "Su diseño minimalista y su marco de madera natural lo hacen versátil y fácil de combinar. Ideal parabaños, salas de estar, dormitorios o cualquier espacio donde desees crear una sensación de amplitud yluminosidad.",
+      precio: "100.00",
+    },
+    {
+      imagen: "./assets/img/furniture/mueble.jpg",
+      alt: "Un mueble de almacenamiento: Es una cómoda o aparador con dos cajones grandes, de diseño sencillo y líneas rectas. El mueble es de color blanco con detalles en madera, lo que le da un aspecto cálido y natural.",
+      titulo: "Mueble",
+      descripcion: "Es el complemento perfecto para cualquier espacio moderno. Combínala con nuestro marco de madera natural y nuestra lámpara de mesa para crear un ambiente acogedor y sofisticado.",
+      precio: "300.00",
+    },
+    {
+      imagen: "./assets/img/furniture/small-table.jpeg",
+      alt: "mesa auxiliar redonda de color blanco con tres patas de madera",
+      titulo: "Small table",
+      descripcion: "para cualquier dormitorio o sala de estar. Su diseño moderno y elegante se adapta a cualquier estilo de decoración.",
+      precio: "120.00",
+    },
+    {
+      imagen: "./assets/img/furniture/stand-table.jpg",
+      alt: "Una mesita de noche de madera con dos estantes. En el estante superior hay un pequeño cactus en una maceta blanca, un cuenco cantor de bronce y tres libros apilados.",
+      titulo: "Stands",
+      descripcion: "Su diseño sencillo y elegante se adapta a cualquier estilo de decoración. Los dos estantes te ofrecen espacio para tus libros, revistas, lámpara de noche y otros objetos personales.",
+      precio: "80.00",
+    },
+    {
+      imagen: "./assets/img/furniture/stand.jpg",
+      alt: "mesas nido de diseño minimalista",
+      titulo: "Stands Tables",
+      descripcion: "Fabricadas en madera de alta calidad, su estilo versátil y funcionalidad las convierten en el complementoideal para cualquier ambiente. Son una pieza clave para quienes valoran la elegancia y la practicidad ensu hogar.",
+      precio: "350.00",
+    },
+    {
+      imagen: "./assets/img/furniture/wood-chair.jpg",
+      alt: "Una mesa de soporte hecha de madera sostenible y de alta calidad, diseñada para complementar cualquier ambiente moderno.",
+      titulo: "Wood Chair",
+      descripcion: "Transforma tu espacio con nuestra línea de productos de cuidado personal, diseñados para armonizar con cualquier ambiente moderno. Con un enfoque en la simplicid la elegancia que complementan tu estilo de vida minimalista y sofisticado.",
+      precio: "170.00",
     },
   ],
 };
 
-/*
-const cardsContainer = document.getElementById("cards__Container");
-
-function renderizarProductos(categoria) {
-  
-if (!productos[categoria]) {
-    console.error(`Categoría "${categoria}" no encontrada.`);
-    return;
-  }
-
-  const productosCategoria = productos[categoria];
-
-  productosCategoria.forEach((producto) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-
-    
-    cardsContainer.appendChild(card);
-  });}
-
-  */
-const cardsContainerHealthcare = document.getElementById("cards__ContainerH");
-const cardsContainerFurniture = document.getElementById("cards__ContainerF");
 function renderizarProductos(categoria, contenedor) {
   if (!productos[categoria]) {
     console.error(`Categoría "${categoria}" no encontrada.`);
