@@ -2,9 +2,27 @@ console.log(
   "Hello, I am Odran. Welcome to my Js Code. Here, We will go over what we learned in class"
 );
 
-
 const cardsContainerHealthcare = document.getElementById("cards__ContainerH");
 const cardsContainerFurniture = document.getElementById("cards__ContainerF");
+
+// Función para cambiar el tema
+function toggleTheme() {
+  console.log('Hello Leonardo')
+  // Toggling la clase en el body
+  document.body.classList.toggle('dark-mode');
+  
+  // Guardar la preferencia en localStorage
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+}
+
+// Función para inicializar el tema
+function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+}
 
 const productos = {
   healthcare: [
@@ -94,7 +112,7 @@ const productos = {
       imagen: "./assets/img/furniture/mirror.jpg",
       alt: "Espejo redondo con un marco de madera. El espejo tiene un diseño minimalista y elegante, con un marco de madera natural que le da un aspecto cálido y acogedor.",
       titulo: "Mirror",
-      descripcion: "Su diseño minimalista y su marco de madera natural lo hacen versátil y fácil de combinar. Ideal parabaños, salas de estar, dormitorios o cualquier espacio donde desees crear una sensación de amplitud yluminosidad.",
+      descripcion: "Su diseño minimalista y su marco de madera natural lo hacen versátil y fácil de combinar. Ideal parabaños, salas de estar, dormitorios o cualquier espacio donde desees crear una sensación de amplitud y luminosidad.",
       precio: "100.00",
     },
     {
@@ -169,12 +187,12 @@ function renderizarProductos(categoria, contenedor) {
     });
   }
   }
-  
-
-
-
 // Renderizar productos de healthcare
 renderizarProductos("healthcare", cardsContainerHealthcare);
 
 // Renderizar productos de furniture
 renderizarProductos("furniture", cardsContainerFurniture);
+
+
+// Inicializar el tema cuando carga la página
+document.addEventListener('DOMContentLoaded', initializeTheme);
