@@ -145,28 +145,50 @@ main article .image-section img {
   background-color: #ffdac6;
   border-radius: 8px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: 0.3s ease;
 }
 .product-section .healthcare .cards__Container .card picture, .product-section .furniture .cards__Container .card picture {
   width: 100%;
-  height: 45%;
+  height: 50%;
+  position: relative;
 }
 .product-section .healthcare .cards__Container .card picture .icon-wish, .product-section .furniture .cards__Container .card picture .icon-wish {
-  display: grid;
-}
-.product-section .healthcare .cards__Container .card picture .icon-wish svg, .product-section .furniture .cards__Container .card picture .icon-wish svg {
-  place-self: end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
 .product-section .healthcare .cards__Container .card picture .icon-wish svg path, .product-section .furniture .cards__Container .card picture .icon-wish svg path {
   stroke: #7c6a0a;
 }
 .product-section .healthcare .cards__Container .card picture img, .product-section .furniture .cards__Container .card picture img {
   width: 100%;
-  height: 50%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
   filter: opacity(0.75);
+}
+.product-section .healthcare .cards__Container .card .info-product, .product-section .furniture .cards__Container .card .info-product {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: small;
+}
+.product-section .healthcare .cards__Container .card .info-product .nameProduct, .product-section .furniture .cards__Container .card .info-product .nameProduct {
+  margin: 8px;
+  align-self: flex-start;
+}
+.product-section .healthcare .cards__Container .card .info-product .description, .product-section .furniture .cards__Container .card .info-product .description {
+  align-self: center;
+}
+.product-section .healthcare .cards__Container .card .info-product .price, .product-section .furniture .cards__Container .card .info-product .price {
+  font-weight: bold;
+  align-self: flex-end;
 }
 .product-section .healthcare .cards__Container .card:hover, .product-section .furniture .cards__Container .card:hover {
   background-color: #babd8d;
@@ -175,22 +197,6 @@ main article .image-section img {
 }
 .product-section .healthcare .cards__Container .card:hover picture img, .product-section .furniture .cards__Container .card:hover picture img {
   filter: opacity(1);
-}
-.product-section .healthcare .cards__Container .card .info-product, .product-section .furniture .cards__Container .card .info-product {
-  width: 100%;
-  height: 45%;
-  color: black;
-  display: flex;
-  flex-direction: column;
-}
-.product-section .healthcare .cards__Container .card .info-product .nameProduct, .product-section .furniture .cards__Container .card .info-product .nameProduct {
-  align-self: flex-start;
-}
-.product-section .healthcare .cards__Container .card .info-product .description, .product-section .furniture .cards__Container .card .info-product .description {
-  align-self: center;
-}
-.product-section .healthcare .cards__Container .card .info-product .price, .product-section .furniture .cards__Container .card .info-product .price {
-  place-self: flex-end;
 }
 .info-section .about-us .mission {
   display: flex;
