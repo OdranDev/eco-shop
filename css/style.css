@@ -13,19 +13,32 @@ UNIVERSALS STATEMENTS
         At rules: @use, @import, @function, @forward, @extend, @at-root
         and Mixins
 */
+*,
+*::before,
+*::after {
+  will-change: contents;
+  transition: background-color 1s ease, color 1s ease, border-color 1s ease, stroke 1s ease;
+}
+
 h2 {
   margin-left: 2rem;
   font-size: 2rem;
 }
 
+html {
+  min-width: 300px;
+}
 html body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #ffeff7;
+  background-color: #ffeff7;
   font-family: "IBM Plex Sans", sans-serif;
   color: #babd8d;
   scroll-behavior: smooth;
+}
+.dark-mode html body {
+  background-color: #2a1f2d;
 }
 
 header {
@@ -50,6 +63,9 @@ header nav p {
   font-size: 2rem;
   font-weight: bold;
 }
+.dark-mode header nav p {
+  color: #d4bc4c;
+}
 header nav ul {
   display: flex;
 }
@@ -62,12 +78,15 @@ header nav ul li a {
   color: #7c6a0a;
   font-size: 1.5rem;
 }
+.dark-mode header nav ul li a {
+  color: #d4bc4c;
+}
 header nav ul li a:hover {
   font-weight: bold;
   color: #e86424;
 }
 header .icons {
-  margin: 1rem;
+  margin: 0 1rem;
   align-self: center;
 }
 header .icons button {
@@ -80,8 +99,28 @@ header .icons button:hover {
   transition: transform 0.3s ease;
   transform: scale(1.1);
 }
+header .icons button {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+}
+.dark-mode header .icons button svg path {
+  stroke: #d4bc4c;
+}
 header .icons button:hover svg path {
   stroke: #e86424;
+}
+header .icons button.iconTheme svg {
+  fill: #7c6a0a;
+}
+.dark-mode header .icons button.iconTheme svg {
+  fill: #d4bc4c;
+}
+.dark-mode header .icons button.iconTheme svg:hover {
+  fill: #e86424;
+}
+header .icons button.iconTheme:hover {
+  fill: #e86424;
 }
 
 main {
@@ -101,9 +140,15 @@ main article {
 main article .impact-section {
   color: #7c6a0a;
 }
+.dark-mode main article .impact-section {
+  color: #d4bc4c;
+}
 main article .impact-section h1 {
   font-size: 3rem;
   color: #7c6a0a;
+}
+.dark-mode main article .impact-section h1 {
+  color: #d4bc4c;
 }
 main article .impact-section p {
   font-size: 1.5rem;
@@ -127,14 +172,27 @@ main article .impact-section .button {
   color: #ffeff7;
   font-weight: bold;
 }
+main article .image-section {
+  max-height: 600px;
+}
 main article .image-section img {
   width: 100%;
-  height: 90%;
+  height: 100%;
   border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.dark-mode main article .image-section img {
+  filter: opacity(0.75);
 }
 
 .product-section .healthcare, .product-section .furniture {
   color: #7c6a0a;
+}
+.dark-mode .product-section .healthcare, .dark-mode .product-section .furniture {
+  color: #d4bc4c;
 }
 .product-section .healthcare .cards__Container, .product-section .furniture .cards__Container {
   margin: 1rem;
@@ -154,6 +212,9 @@ main article .image-section img {
   display: flex;
   flex-direction: column;
   transition: 0.3s ease;
+}
+.dark-mode .product-section .healthcare .cards__Container .card, .dark-mode .product-section .furniture .cards__Container .card {
+  background-color: #2d1f15;
 }
 .product-section .healthcare .cards__Container .card picture, .product-section .furniture .cards__Container .card picture {
   width: 100%;
@@ -203,8 +264,14 @@ main article .image-section img {
   color: #ffeff7;
   transform: scale(1.1);
 }
+.dark-mode .product-section .healthcare .cards__Container .card:hover, .dark-mode .product-section .furniture .cards__Container .card:hover {
+  background-color: #1f2016;
+}
 .product-section .healthcare .cards__Container .card:hover picture img, .product-section .furniture .cards__Container .card:hover picture img {
   filter: opacity(1);
+}
+.dark-mode .product-section .healthcare .cards__Container .card:hover picture img, .dark-mode .product-section .furniture .cards__Container .card:hover picture img {
+  filter: opacity(0.75);
 }
 .info-section .about-us .mission {
   display: flex;
@@ -214,11 +281,17 @@ main article .image-section img {
   text-align: center;
   margin-inline: auto;
 }
+.dark-mode .info-section .about-us .mission {
+  color: #ffb84d;
+}
 .info-section .about-us .mission .earth, .info-section .about-us .mission .innovations {
   width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.info-section .gallery {
+  padding: 6rem 0;
 }
 .info-section .gallery .images-Container {
   display: grid;
@@ -261,13 +334,22 @@ main article .image-section img {
   font-weight: bold;
   color: #fa9500;
 }
+.dark-mode .info-section .location .text-map h3 {
+  color: #ffb84d;
+}
 .info-section .location .text-map p {
   color: black;
+}
+.dark-mode .info-section .location .text-map p {
+  color: #ffeff7;
 }
 
 .contactUs .formulary p {
   text-align: center;
   color: #fa9500;
+}
+.dark-mode .contactUs .formulary p {
+  color: #ffb84d;
 }
 .contactUs .formulary .info--Container {
   display: grid;
@@ -279,6 +361,10 @@ main article .image-section img {
   background-color: #ffdac6;
   color: #7c6a0a;
 }
+.dark-mode .contactUs .formulary .info--Container {
+  background-color: #2d1f15;
+  color: #d4bc4c;
+}
 .contactUs .formulary .info--Container .info--container__Name, .contactUs .formulary .info--Container .info--container__Email, .contactUs .formulary .info--Container .info--container__LastName {
   width: 90%;
   margin: 1rem auto;
@@ -289,6 +375,9 @@ main article .image-section img {
   border: 1px solid #babd8d;
   border-radius: 4px;
 }
+.dark-mode .contactUs .formulary .info--Container .info--container__Name input, .dark-mode .contactUs .formulary .info--Container .info--container__Email input, .dark-mode .contactUs .formulary .info--Container .info--container__LastName input {
+  background: #ffdac6;
+}
 .contactUs .formulary .info--Container .info--container__Name input:focus-visible, .contactUs .formulary .info--Container .info--container__Email input:focus-visible, .contactUs .formulary .info--Container .info--container__LastName input:focus-visible {
   outline: none;
 }
@@ -298,15 +387,24 @@ main article .image-section img {
 .contactUs .formulary .info--Container .info--container__Name input::placeholder, .contactUs .formulary .info--Container .info--container__Email input::placeholder, .contactUs .formulary .info--Container .info--container__LastName input::placeholder {
   color: lightgray;
 }
+.dark-mode .contactUs .formulary .info--Container .info--container__Name input::-moz-placeholder, .dark-mode .contactUs .formulary .info--Container .info--container__Email input::-moz-placeholder, .dark-mode .contactUs .formulary .info--Container .info--container__LastName input::-moz-placeholder {
+  color: darkgrey;
+}
+.dark-mode .contactUs .formulary .info--Container .info--container__Name input::placeholder, .dark-mode .contactUs .formulary .info--Container .info--container__Email input::placeholder, .dark-mode .contactUs .formulary .info--Container .info--container__LastName input::placeholder {
+  color: darkgrey;
+}
 .contactUs .formulary .info--Container .info--container__Comentario {
   width: 90%;
   margin: 1rem auto;
 }
 .contactUs .formulary .info--Container .info--container__Comentario textarea {
   width: 99%;
-  height: 4rem;
+  height: 5rem;
   border: 1px solid #babd8d;
   border-radius: 4px;
+}
+.dark-mode .contactUs .formulary .info--Container .info--container__Comentario textarea {
+  background: #ffdac6;
 }
 .contactUs .formulary .info--Container .info--container__Comentario textarea:focus-visible,
 .contactUs .formulary .info--Container .info--container__Comentario textarea :focus {
@@ -317,6 +415,12 @@ main article .image-section img {
 }
 .contactUs .formulary .info--Container .info--container__Comentario textarea::placeholder {
   color: lightgray;
+}
+.dark-mode .contactUs .formulary .info--Container .info--container__Comentario textarea::-moz-placeholder {
+  color: darkgray;
+}
+.dark-mode .contactUs .formulary .info--Container .info--container__Comentario textarea::placeholder {
+  color: darkgray;
 }
 .contactUs .formulary .info--container__Submit {
   display: flex;
@@ -346,6 +450,10 @@ footer {
   height: auto;
   color: #ffeff7;
   border-radius: 12px 12px 0 0;
+}
+.dark-mode footer {
+  background: #ffb84d;
+  color: #2a1f2d;
 }
 footer h3 {
   padding: 2rem;

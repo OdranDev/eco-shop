@@ -43,6 +43,17 @@ $font-stack: "IBM Plex Sans", sans-serif;
   }
 }
 
+*,
+*::before,
+*::after {
+  will-change: contents;
+  transition:
+    background-color 1s ease,
+    color 1s ease,
+    border-color 1s ease,
+    stroke 1s ease;
+}
+
 @mixin flexStyles($displayS, $justifyC, $alignI) {
   display: $displayS;
   justify-content: $justifyC;
@@ -75,15 +86,20 @@ h2 {
 }
 
 html {
+  min-width: 300px;
 
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: $prim-color;
+    background-color: $prim-color;
     font-family: $font-stack;
     color: $third-color;
     scroll-behavior: smooth;
+
+    @include dark-mode {
+      background-color: $prim-color-dark;
+    }
   }
 
 }
@@ -91,7 +107,8 @@ html {
 header {
   width: 100%;
   max-height: 100px;
-  @include dark-mode{
+
+  @include dark-mode {
     background: $prim-color-dark;
   }
 
@@ -101,12 +118,16 @@ header {
     padding: 1rem;
     @include flexStyles(flex, space-between, center);
     flex-wrap: wrap;
-    
+
     p {
       margin: 0 1rem;
       color: $other-color-two;
       font-size: 2rem;
       font-weight: bold;
+
+      @include dark-mode {
+        color: $other-color-two-dark;
+      }
     }
 
     ul {
@@ -121,6 +142,10 @@ header {
           color: $other-color-two;
           font-size: 1.5rem;
 
+          @include dark-mode {
+            color: $other-color-two-dark;
+          }
+
           &:hover {
             font-weight: bold;
             color: $button-color
@@ -131,12 +156,23 @@ header {
   }
 
   .icons {
-    margin: 1rem;
+    margin: 0 1rem;
     align-self: center;
     @include buttons;
-    
+
 
     button {
+      width: 36px;
+      height: 36px;
+      margin-right: 8px;
+      @include dark-mode {
+        svg {
+          path {
+            stroke: $other-color-two-dark;
+          }
+        }
+      }
+
       &:hover {
         svg {
           path {
@@ -145,14 +181,32 @@ header {
         }
       }
     }
+
+    button.iconTheme {
+      svg {
+        fill: $other-color-two;
+
+        @include dark-mode {
+          fill: $other-color-two-dark;
+          &:hover {
+            fill: $button-color
+          }
+        }
+      }
+      &:hover {
+        fill: $button-color
+      }
+    }
   }
 }
+
 
 
 main {
   width: 100%;
   height: auto;
-  @include dark-mode{
+
+  @include dark-mode {
     background: $prim-color-dark;
   }
 
@@ -165,9 +219,18 @@ main {
     .impact-section {
       color: $other-color-two;
 
+      @include dark-mode {
+        color: $other-color-two-dark;
+      }
+
       h1 {
         font-size: 3rem;
         color: $other-color-two;
+
+        @include dark-mode {
+          color: $other-color-two-dark;
+        }
+
       }
 
       p {
@@ -188,10 +251,18 @@ main {
     }
 
     .image-section {
+      max-height: 600px;
+
       img {
         width: 100%;
-        height: 90%;
+        height: 100%;
         border-radius: 8px;
+        object-fit: cover;
+        object-position: center;
+
+        @include dark-mode {
+          filter: opacity(0.75);
+        }
       }
     }
   }
@@ -200,6 +271,10 @@ main {
 .product-section {
   .healthcare {
     color: $other-color-two;
+
+    @include dark-mode {
+      color: $other-color-two-dark;
+    }
 
     .cards__Container {
       margin: 1rem;
@@ -216,6 +291,10 @@ main {
         overflow: hidden;
         display: flex;
         flex-direction: column;
+
+        @include dark-mode {
+          background-color: $second-color-dark;
+        }
 
         picture {
           width: 100%;
@@ -277,8 +356,16 @@ main {
           color: $prim-color;
           transform: scale(1.1);
 
+          @include dark-mode {
+            background-color: $third-color-dark;
+          }
+
           picture img {
             filter: opacity(1);
+
+            @include dark-mode {
+              filter: opacity(0.75)
+            }
           }
         }
       }
@@ -298,6 +385,10 @@ main {
       text-align: center;
       margin-inline: auto;
 
+      @include dark-mode {
+        color: $other-color-dark;
+      }
+
       .earth {
         width: 40%;
         @include flexStyles(flex, center, center);
@@ -310,6 +401,8 @@ main {
   }
 
   .gallery {
+    padding: 6rem 0;
+
     .images-Container {
       @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
       justify-items: center;
@@ -350,10 +443,18 @@ main {
       h3 {
         font-weight: bold;
         color: $other-color;
+
+        @include dark-mode {
+          color: $other-color-dark;
+        }
       }
 
       p {
         color: black;
+
+        @include dark-mode {
+          color: $prim-color;
+        }
       }
     }
   }
@@ -365,7 +466,11 @@ main {
 
     p {
       text-align: center;
-      color: $other-color
+      color: $other-color;
+
+      @include dark-mode {
+        color: $other-color-dark
+      }
     }
 
     .info--Container {
@@ -375,6 +480,11 @@ main {
       border-radius: 8px;
       background-color: $second-color;
       color: $other-color-two;
+
+      @include dark-mode {
+        background-color: $second-color-dark;
+        color: $other-color-two-dark;
+      }
 
       .info--container__Name {
         width: 90%;
@@ -386,12 +496,20 @@ main {
           border: 1px solid $third-color;
           border-radius: 4px;
 
+          @include dark-mode {
+            background: $second-color;
+          }
+
           &:focus-visible {
             outline: none;
           }
 
           &::placeholder {
             color: lightgray;
+
+            @include dark-mode {
+              color: darkgrey;
+            }
           }
         }
       }
@@ -411,9 +529,13 @@ main {
 
         textarea {
           width: 99%;
-          height: 4rem;
+          height: 5rem;
           border: 1px solid $third-color;
           border-radius: 4px;
+
+          @include dark-mode {
+            background: $second-color;
+          }
 
           &:focus-visible,
           :focus {
@@ -422,6 +544,10 @@ main {
 
           &::placeholder {
             color: lightgray;
+
+            @include dark-mode {
+              color: darkgray;
+            }
           }
         }
       }
@@ -450,6 +576,11 @@ footer {
   height: auto;
   color: $prim-color;
   border-radius: 12px 12px 0 0;
+
+  @include dark-mode {
+    background: $other-color-dark;
+    color: $prim-color-dark;
+  }
 
   h3 {
     padding: 2rem;
