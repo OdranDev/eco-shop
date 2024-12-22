@@ -13,13 +13,46 @@ UNIVERSALS STATEMENTS
         At rules: @use, @import, @function, @forward, @extend, @at-root
         and Mixins
 */
+// Variables para los temas
 $prim-color: #ffeff7;
 $second-color: #ffdac6;
 $third-color: #babd8d;
 $button-color: #e86424;
-$Other-color: #fa9500;
-$Other-color-two: #7c6a0a;
+$other-color: #fa9500;
+$other-color-two: #7c6a0a;
+$text-primary: #333333;
+$text-secondary: #666666;
+
+// Variables para dark mode
+$prim-color-dark: #2a1f2d;
+$second-color-dark: #2d1f15;
+$third-color-dark: #1f2016;
+$button-color-dark: #ff7b3d;
+$other-color-dark: #ffb84d;
+$other-color-two-dark: #d4bc4c;
+$text-primary-dark: #e1e1e1;
+$text-secondary-dark: #b0b0b0;
+
+// Variables para las fuentes
 $font-stack: "IBM Plex Sans", sans-serif;
+
+// Mixin para tema oscuro
+@mixin dark-mode {
+  .dark-mode & {
+    @content;
+  }
+}
+
+*,
+*::before,
+*::after {
+  will-change: contents;
+  transition:
+    background-color 1s ease,
+    color 1s ease,
+    border-color 1s ease,
+    stroke 1s ease;
+}
 
 @mixin flexStyles($displayS, $justifyC, $alignI) {
   display: $displayS;
@@ -53,23 +86,31 @@ h2 {
 }
 
 html {
-  scroll-behavior: smooth;
+  min-width: 300px;
 
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: $prim-color;
+    background-color: $prim-color;
     font-family: $font-stack;
     color: $third-color;
     scroll-behavior: smooth;
 
+    @include dark-mode {
+      background-color: $prim-color-dark;
+    }
   }
+
 }
 
 header {
   width: 100%;
   max-height: 100px;
+
+  @include dark-mode {
+    background: $prim-color-dark;
+  }
 
   nav {
     width: 90%;
@@ -80,8 +121,13 @@ header {
 
     p {
       margin: 0 1rem;
-      color: $Other-color-two;
+      color: $other-color-two;
       font-size: 2rem;
+      font-weight: bold;
+
+      @include dark-mode {
+        color: $other-color-two-dark;
+      }
     }
 
     ul {
@@ -93,22 +139,76 @@ header {
 
         a {
           text-decoration: none;
-          color: $Other-color-two;
+          color: $other-color-two;
+          font-size: 1.5rem;
+
+          @include dark-mode {
+            color: $other-color-two-dark;
+          }
+
+          &:hover {
+            font-weight: bold;
+            color: $button-color
+          }
+        }
+      }
+    }
+  }
+
+  .icons {
+    margin: 0 1rem;
+    align-self: center;
+    @include buttons;
+
+
+    button {
+      width: 36px;
+      height: 36px;
+      margin-right: 8px;
+      @include dark-mode {
+        svg {
+          path {
+            stroke: $other-color-two-dark;
+          }
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            stroke: $button-color;
+          }
         }
       }
     }
 
-    .icons {
-      margin: 1rem;
-      align-self: center;
-      @include buttons;
+    button.iconTheme {
+      svg {
+        fill: $other-color-two;
+
+        @include dark-mode {
+          fill: $other-color-two-dark;
+          &:hover {
+            fill: $button-color
+          }
+        }
+      }
+      &:hover {
+        fill: $button-color
+      }
     }
   }
 }
 
+
+
 main {
   width: 100%;
   height: auto;
+
+  @include dark-mode {
+    background: $prim-color-dark;
+  }
 
   article {
     width: 90%;
@@ -117,11 +217,20 @@ main {
     gap: 2rem;
 
     .impact-section {
-      color: $Other-color-two;
+      color: $other-color-two;
+
+      @include dark-mode {
+        color: $other-color-two-dark;
+      }
 
       h1 {
         font-size: 3rem;
-        color: $Other-color-two;
+        color: $other-color-two;
+
+        @include dark-mode {
+          color: $other-color-two-dark;
+        }
+
       }
 
       p {
@@ -142,10 +251,18 @@ main {
     }
 
     .image-section {
+      max-height: 600px;
+
       img {
         width: 100%;
-        height: 90%;
+        height: 100%;
         border-radius: 8px;
+        object-fit: cover;
+        object-position: center;
+
+        @include dark-mode {
+          filter: opacity(0.75);
+        }
       }
     }
   }
@@ -153,7 +270,11 @@ main {
 
 .product-section {
   .healthcare {
-    color: $Other-color-two;
+    color: $other-color-two;
+
+    @include dark-mode {
+      color: $other-color-two-dark;
+    }
 
     .cards__Container {
       margin: 1rem;
@@ -161,37 +282,70 @@ main {
       justify-items: center;
 
       .card {
-        width: 260px;
-        height: auto;
+        width: 250px;
+        height: 400px;
         margin: 1rem;
         padding: 1rem;
         background-color: $second-color;
         border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
 
-        .icon-wish {
-          display: grid;
-
-          svg {
-            place-self: end;
-            margin-bottom: 12px;
-
-            path {
-              stroke: $Other-color-two;
-            }
-          }
+        @include dark-mode {
+          background-color: $second-color-dark;
         }
 
         picture {
           width: 100%;
-          height: 100%;
+          height: 50%;
+          position: relative;
+
+          .icon-wish {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+
+            svg {
+              path {
+                stroke: $other-color-two;
+              }
+            }
+          }
 
           img {
             width: 100%;
-            height: 50%;
+            height: 100%;
             object-fit: cover;
             border-radius: 8px;
             filter: opacity(0.75);
-            // aspect-ratio: 16/9
+
+          }
+        }
+
+        .info-product {
+          width: 100%;
+          height: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: small;
+
+          .nameProduct {
+            margin: 8px;
+            font-size: medium;
+            align-self: flex-start;
+          }
+
+          .description {
+            align-self: center;
+          }
+
+          .price {
+            font-weight: bold;
+            font-size: medium;
+            align-self: flex-end;
           }
         }
 
@@ -202,9 +356,15 @@ main {
           color: $prim-color;
           transform: scale(1.1);
 
-          picture {
-            img {
-              filter: opacity(1);
+          @include dark-mode {
+            background-color: $third-color-dark;
+          }
+
+          picture img {
+            filter: opacity(1);
+
+            @include dark-mode {
+              filter: opacity(0.75)
             }
           }
         }
@@ -221,9 +381,13 @@ main {
   .about-us {
     .mission {
       @include flexStyles(flex, center, center);
-      color: $Other-color;
+      color: $other-color;
       text-align: center;
       margin-inline: auto;
+
+      @include dark-mode {
+        color: $other-color-dark;
+      }
 
       .earth {
         width: 40%;
@@ -237,6 +401,8 @@ main {
   }
 
   .gallery {
+    padding: 6rem 0;
+
     .images-Container {
       @include gridStyle(grid, center, repeat(auto-fit, minmax(300px, 1fr)));
       justify-items: center;
@@ -276,11 +442,19 @@ main {
 
       h3 {
         font-weight: bold;
-        color: $Other-color;
+        color: $other-color;
+
+        @include dark-mode {
+          color: $other-color-dark;
+        }
       }
 
       p {
         color: black;
+
+        @include dark-mode {
+          color: $prim-color;
+        }
       }
     }
   }
@@ -292,7 +466,11 @@ main {
 
     p {
       text-align: center;
-      color: $Other-color
+      color: $other-color;
+
+      @include dark-mode {
+        color: $other-color-dark
+      }
     }
 
     .info--Container {
@@ -301,7 +479,12 @@ main {
       padding: 1rem;
       border-radius: 8px;
       background-color: $second-color;
-      color: $Other-color-two;
+      color: $other-color-two;
+
+      @include dark-mode {
+        background-color: $second-color-dark;
+        color: $other-color-two-dark;
+      }
 
       .info--container__Name {
         width: 90%;
@@ -313,12 +496,20 @@ main {
           border: 1px solid $third-color;
           border-radius: 4px;
 
+          @include dark-mode {
+            background: $second-color;
+          }
+
           &:focus-visible {
             outline: none;
           }
 
           &::placeholder {
             color: lightgray;
+
+            @include dark-mode {
+              color: darkgrey;
+            }
           }
         }
       }
@@ -338,9 +529,13 @@ main {
 
         textarea {
           width: 99%;
-          height: 4rem;
+          height: 5rem;
           border: 1px solid $third-color;
           border-radius: 4px;
+
+          @include dark-mode {
+            background: $second-color;
+          }
 
           &:focus-visible,
           :focus {
@@ -349,6 +544,10 @@ main {
 
           &::placeholder {
             color: lightgray;
+
+            @include dark-mode {
+              color: darkgray;
+            }
           }
         }
       }
@@ -372,10 +571,16 @@ main {
 }
 
 footer {
-  background: $Other-color;
+  background: $other-color;
   width: 100%;
   height: auto;
   color: $prim-color;
+  border-radius: 12px 12px 0 0;
+
+  @include dark-mode {
+    background: $other-color-dark;
+    color: $prim-color-dark;
+  }
 
   h3 {
     padding: 2rem;
