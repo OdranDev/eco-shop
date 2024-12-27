@@ -108,7 +108,7 @@ header {
   max-height: 80px;
   position: fixed;
   background: rgba(255, 255, 255, 0.57);
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -126,14 +126,18 @@ header {
     @include flexStyles(flex, space-between, center);
     flex-wrap: wrap;
 
-    p {
-      margin: 0 1rem;
-      color: $other-color-two;
-      font-size: 2rem;
-      font-weight: bold;
+    a {
+      text-decoration: none;
 
-      @include dark-mode {
-        color: $other-color-two-dark;
+      p {
+        margin: 0 1rem;
+        color: $other-color-two;
+        font-size: 2rem;
+        font-weight: bold;
+
+        @include dark-mode {
+          color: $other-color-two-dark;
+        }
       }
     }
 
@@ -163,7 +167,7 @@ header {
   }
 
   .icons {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     align-self: center;
     @include buttons;
 
@@ -171,7 +175,7 @@ header {
     button {
       width: 36px;
       height: 36px;
-      margin-right: 8px;
+      margin: 8px;
 
       @include dark-mode {
         svg {
@@ -310,8 +314,6 @@ main {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        box-shadow: 20px 20px 60px #bebebe,
-          -20px -20px 60px #ffffff;
 
         @include dark-mode {
           background-color: $second-color-dark;
@@ -363,10 +365,29 @@ main {
             align-self: center;
           }
 
-          .price {
-            font-weight: bold;
-            font-size: medium;
-            align-self: flex-end;
+          div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .addToCart {
+              width: 50%;
+              height: 60%;
+              border: none;
+              border-radius: 8px;
+              background: rgba(255, 255, 255, 0.57);
+              border-radius: 8px;
+              box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+              backdrop-filter: blur(6px);
+              -webkit-backdrop-filter: blur(6px);
+              border: 1px solid rgba(255, 255, 255, 0.51);
+            }
+
+            .price {
+              font-weight: bold;
+              font-size: medium;
+              align-self: flex-end;
+            }
           }
         }
 

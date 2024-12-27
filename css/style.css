@@ -46,7 +46,7 @@ header {
   max-height: 80px;
   position: fixed;
   background: rgba(255, 255, 255, 0.57);
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -65,13 +65,16 @@ header nav {
   align-items: center;
   flex-wrap: wrap;
 }
-header nav p {
+header nav a {
+  text-decoration: none;
+}
+header nav a p {
   margin: 0 1rem;
   color: #7c6a0a;
   font-size: 2rem;
   font-weight: bold;
 }
-.dark-mode header nav p {
+.dark-mode header nav a p {
   color: #d4bc4c;
 }
 header nav ul {
@@ -94,7 +97,7 @@ header nav ul li a:hover {
   color: #e86424;
 }
 header .icons {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   align-self: center;
 }
 header .icons button {
@@ -110,7 +113,7 @@ header .icons button:hover {
 header .icons button {
   width: 36px;
   height: 36px;
-  margin-right: 8px;
+  margin: 8px;
 }
 .dark-mode header .icons button svg path {
   stroke: #d4bc4c;
@@ -224,7 +227,6 @@ main article .image-section img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   transition: 0.3s ease;
 }
 .dark-mode .product-section .healthcare .cards__Container .card, .dark-mode .product-section .furniture .cards__Container .card {
@@ -268,7 +270,24 @@ main article .image-section img {
 .product-section .healthcare .cards__Container .card .info-product .description, .product-section .furniture .cards__Container .card .info-product .description {
   align-self: center;
 }
-.product-section .healthcare .cards__Container .card .info-product .price, .product-section .furniture .cards__Container .card .info-product .price {
+.product-section .healthcare .cards__Container .card .info-product div, .product-section .furniture .cards__Container .card .info-product div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-section .healthcare .cards__Container .card .info-product div .addToCart, .product-section .furniture .cards__Container .card .info-product div .addToCart {
+  width: 50%;
+  height: 60%;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.57);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.51);
+}
+.product-section .healthcare .cards__Container .card .info-product div .price, .product-section .furniture .cards__Container .card .info-product div .price {
   font-weight: bold;
   font-size: medium;
   align-self: flex-end;
