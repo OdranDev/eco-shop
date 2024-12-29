@@ -229,9 +229,6 @@ renderizarProductos("furniture", cardsContainerFurniture);
 /* + o - TO CART */
 // Inicializar contador global de clics
 let clickCount = 0;
-if (clickCount < 0) {
-  console.log('VACIO')
-}
 
 // Agregar EventListener a cada botón
 document.addEventListener('DOMContentLoaded', () => {
@@ -247,10 +244,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   buttonsRemove.forEach(button => {
     button.addEventListener('click', () => {
-      clickCount--;
+      if(clickCount > 0){ 
+        clickCount--;
+      }
       console.log('Click número:', clickCount);
     });
   });
+  if (clickCount <= 0) {
+    console.log('VACIO')
+  }
 });
 
 
