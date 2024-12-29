@@ -215,10 +215,22 @@ header {
         fill: $button-color
       }
     }
+    .cart{
+      position: relative;
+      div{
+        width: 1rem;
+        height: 1rem;
+        padding: 1px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $prim-color;
+        background-color: red;
+        border-radius: 50%;
+      }
+    }
   }
 }
-
-
 
 main {
   width: 100%;

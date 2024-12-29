@@ -1,5 +1,19 @@
 console.log(
-  "Hello, I am Odran. Welcome to my Js Code. Here, We will go over what we learned in class"
+  setTimeout(() => {
+  "Hello, I am Odran. Welcome to my Js Code. Here, We will go over what we learned in class";
+  }, 5000),
+  setTimeout(() => {
+    "You have a choice for the theme: light mode 🌞 or dark mode 🌙.";
+  }, 10000),
+  setTimeout(() => {
+    "On the 🛒, you can see the quantity of objects you want to shop.";
+  }, 15000),
+  setTimeout(() => {
+    "The page for editing articles in the cart 🛍️ isn’t ready yet, but it’s coming soon ⏳.";
+  }, 15000),
+  setTimeout(() => {
+    "Follow me ⭐ and give me a star on GitHub 🖥️ https://github.com/OdranDev/eco-shop ";
+  }, 15000),
 );
 
 const cardsContainerHealthcare = document.getElementById("cards__ContainerH");
@@ -32,9 +46,6 @@ function toggleTheme() {
       </svg>
     `
   }
-
-
-
 }
 
 // Función para inicializar el tema
@@ -239,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buttonsAdd.forEach(button => {
     button.addEventListener('click', () => {
       clickCount++;
-      console.log('Click número:', clickCount);
+      counter.innerText = clickCount;
     });
   });
 
@@ -248,12 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if(clickCount > 0){ 
         clickCount--;
       }
-      console.log('Click número:', clickCount);
+      counter.innerText = '';
+      counter.innerText = clickCount;
     });
   });
-  if (clickCount <= 0) {
-    console.log('VACIO')
-  }
 });
 
 
