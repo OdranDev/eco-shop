@@ -270,14 +270,18 @@ main article .image-section img {
 .product-section .healthcare .cards__Container .card .info-product .description, .product-section .furniture .cards__Container .card .info-product .description {
   align-self: center;
 }
-.product-section .healthcare .cards__Container .card .info-product div, .product-section .furniture .cards__Container .card .info-product div {
+.product-section .healthcare .cards__Container .card .info-product span, .product-section .furniture .cards__Container .card .info-product span {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.product-section .healthcare .cards__Container .card .info-product div .addToCart, .product-section .furniture .cards__Container .card .info-product div .addToCart {
+.product-section .healthcare .cards__Container .card .info-product span .addToCart, .product-section .furniture .cards__Container .card .info-product span .addToCart {
+  color: red;
+}
+.product-section .healthcare .cards__Container .card .info-product span .cart, .product-section .furniture .cards__Container .card .info-product span .cart {
   width: 50%;
   height: 60%;
+  padding: 8px;
   border: none;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.57);
@@ -287,7 +291,10 @@ main article .image-section img {
   -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.51);
 }
-.product-section .healthcare .cards__Container .card .info-product div .price, .product-section .furniture .cards__Container .card .info-product div .price {
+.product-section .healthcare .cards__Container .card .info-product span .removeToCart, .product-section .furniture .cards__Container .card .info-product span .removeToCart {
+  color: red;
+}
+.product-section .healthcare .cards__Container .card .info-product .price, .product-section .furniture .cards__Container .card .info-product .price {
   font-weight: bold;
   font-size: medium;
   align-self: flex-end;
