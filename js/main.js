@@ -1,25 +1,6 @@
-console.log(
-  setTimeout(() => {
-  "Hello, I am Odran. Welcome to my Js Code. Here, We will go over what we learned in class";
-  }, 5000),
-  setTimeout(() => {
-    "You have a choice for the theme: light mode 🌞 or dark mode 🌙.";
-  }, 10000),
-  setTimeout(() => {
-    "On the 🛒, you can see the quantity of objects you want to shop.";
-  }, 15000),
-  setTimeout(() => {
-    "The page for editing articles in the cart 🛍️ isn’t ready yet, but it’s coming soon ⏳.";
-  }, 15000),
-  setTimeout(() => {
-    "Follow me ⭐ and give me a star on GitHub 🖥️ https://github.com/OdranDev/eco-shop ";
-  }, 15000),
-);
-
 const cardsContainerHealthcare = document.getElementById("cards__ContainerH");
 const cardsContainerFurniture = document.getElementById("cards__ContainerF");
 const iconTheme = document.getElementById("iconTheme")
-const addToCart = document.getElementById("addToCart");
 const counter = document.getElementById("counter");
 
 // Función para cambiar el tema
@@ -185,6 +166,7 @@ const productos = {
   ],
 };
 
+
 function renderizarProductos(categoria, contenedor) {
   const productosCategoria = productos[categoria];
 
@@ -226,11 +208,11 @@ function renderizarProductos(categoria, contenedor) {
                     <p class="price">$${producto.precio}</p>
                   </span>
               </div>
-          `;
-
+      `;
       contenedor.appendChild(card);
     });
   }
+  return productosCategoria;
 }
 // Renderizar productos de healthcare
 renderizarProductos("healthcare", cardsContainerHealthcare);
@@ -241,30 +223,65 @@ renderizarProductos("furniture", cardsContainerFurniture);
 /* + o - TO CART */
 // Inicializar contador global de clics
 let clickCount = 0;
+const articlesInTheCart = [];
 
-// Agregar EventListener a cada botón
 document.addEventListener('DOMContentLoaded', () => {
   const buttonsAdd = document.querySelectorAll('.addToCart');
   const buttonsRemove = document.querySelectorAll('.removeToCart');
 
   buttonsAdd.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+      // Obtener la información del producto desde el DOM
+      const productCard = event.target.closest('.card');
+      const productName = productCard.querySelector('.nameProduct').textContent;
+      const productPrice = productCard.querySelector('.price').textContent;
+
+      const product = {
+        name: productName,
+        price: productPrice
+      };
+
       clickCount++;
       counter.innerText = clickCount;
+      articlesInTheCart.push(product);
+      console.log('Producto agregado:', articlesInTheCart);
     });
   });
 
   buttonsRemove.forEach(button => {
     button.addEventListener('click', () => {
-      if(clickCount > 0){ 
+      if (clickCount > 0) {
         clickCount--;
+        const removedItem = articlesInTheCart.pop();
+        console.log('Producto eliminado:', removedItem);
+        console.log('Carrito actual:', articlesInTheCart);
       }
-      counter.innerText = '';
       counter.innerText = clickCount;
     });
   });
 });
 
+function mostrarMensajesInterval() {
+  const mensajes = [
+    "Hello, I am Odran. Welcome to my Js Code. Here, We will go over what we learned in class",
+    "You have a choice for the theme: light mode 🌞 or dark mode 🌙.",
+    "On the 🛒, you can see the quantity of objects you want to shop.",
+    "The page for editing articles in the cart 🛍️ isn't ready yet, but it's coming soon ⏳.",
+    "Follow me ⭐ and give me a star on GitHub 🖥️ https://github.com/OdranDev/eco-shop",
+    "All is made in love "
+  ];
 
-// Inicializar el tema cuando carga la página
-document.addEventListener('DOMContentLoaded', initializeTheme);
+  let indice = 0;
+
+  const intervalo = setInterval(() => {
+    if (indice < mensajes.length) {
+      console.log(mensajes[indice]);
+      indice++;
+    } else {
+      clearInterval(intervalo); // Detiene el intervalo cuando se han mostrado todos los mensajes
+    }
+  }, 5000);
+}
+  mostrarMensajesInterval();
+  // Inicializar el tema cuando carga la página
+  document.addEventListener('DOMContentLoaded', initializeTheme);
