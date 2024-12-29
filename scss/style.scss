@@ -310,7 +310,7 @@ main {
         margin: 1rem;
         padding: 1rem;
         background-color: $second-color;
-        border-radius: 8px;
+        border-radius: 12px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -380,14 +380,21 @@ main {
               backdrop-filter: blur(6px);
               -webkit-backdrop-filter: blur(6px);
               border: 1px solid rgba(255, 255, 255, 0.51);
-
+              @include buttons;
               .addToCart {
-                @include buttons;
                 width: 30%;
                 border: none;
                 font-weight: 900;
                 border-radius: 25%;
                 margin: 4px;
+                padding: 4px;
+                background-color: $other-color-two;
+                &:hover{
+                  background-color: $button-color;
+                  @include dark-mode{
+                    background-color: $button-color-dark;
+                  }
+                }
                 
               }
 

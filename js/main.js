@@ -6,6 +6,7 @@ const cardsContainerHealthcare = document.getElementById("cards__ContainerH");
 const cardsContainerFurniture = document.getElementById("cards__ContainerF");
 const iconTheme = document.getElementById("iconTheme")
 const addToCart = document.getElementById("addToCart");
+const counter = document.getElementById("counter");
 
 // Función para cambiar el tema
 function toggleTheme() {
