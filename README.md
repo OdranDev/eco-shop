@@ -1,5 +1,5 @@
 🛍️ Eco-store
-Eco-store es una tienda en línea dedicada a ofrecer productos ecológicos y sostenibles para la salud y la decoración del hogar. Nuestros productos están elaborados artesanalmente con materiales que favorecen el cuidado del medio ambiente. Nuestro compromiso es minimizar el impacto ambiental y ofrecer alta calidad.
+Es una tienda en línea dedicada a ofrecer productos ecológicos y sostenibles para la salud y la decoración del hogar. Nuestros productos están elaborados artesanalmente con materiales que favorecen el cuidado del medio ambiente. Nuestro compromiso es minimizar el impacto ambiental y ofrecer alta calidad.
 
 🌟 Productos Destacados
 🧘 Cuidado de la Salud:
